@@ -1,0 +1,31 @@
+<div class="courses">
+
+    {% for course in courses %}
+
+        <div class="course">
+
+            <div class="photo animated-element">
+
+                <a href="/course/{{ course.id }}">
+
+                    <img alt="{{ course.title }}" src="{{  asset(course.photo) }}">
+
+                </a>
+
+            </div>
+
+            <div class="description animated-element">
+
+                <a href="/course/{{ course.id }}"><h3>{{ course.title }}</h3></a>
+                <span>{{ course.date | date('Y-m-d H:i') }}</span>
+                <p>{{ course.description }}</p>
+                <label>{{ course.price }} <sup>€/vnt.</sup></label>
+                <button onclick="add_course({{ course.id }})">Pridėti į krepšelį</button>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+</div>

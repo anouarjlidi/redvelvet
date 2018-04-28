@@ -1,0 +1,109 @@
+section#product h2{
+    margin-bottom: 50px;
+}
+
+div#description{
+    width: calc(55% - 50px);
+    margin-left: 50px;
+    height: auto;
+    float: left;
+    padding: 10px 25px;
+}
+
+div#description h3{
+    text-align: left;
+    color:#ff6d84;
+    font-size: 1.8em;
+    font-family: sail;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+div#description p{
+    text-align: justify;
+    margin: 0;
+    display: block;
+    margin-bottom: 25px;
+    padding-bottom: 0;
+    font-size: 1em;
+    line-height: 1.1em;
+    color: #606060;
+    font-family: 'Arapey';
+}
+
+div#description .price{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #606060;
+}
+
+div#description .price label{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    padding-bottom: 20px;
+    line-height: 40px;
+    color: #ff6d84;
+    font-family: 'Arapey';
+    font-size: 1.7em;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+div#description button{
+    width: 100%;
+    height: 37.5px;
+    border-radius: 5px;
+    border:1px solid #606060;
+    color: #606060;
+    font-weight: bold;
+    background-color: #f3f0e9;
+    line-height: 37.5px;
+    cursor: pointer;
+}
+
+div#description .quantity{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+div#description .quantity label{
+    float: left;
+    font-weight: bold;
+    line-height: 40px;
+    color: #606060;
+    font-family: 'Arapey';
+    font-size: 1.1em;
+}
+
+div#description .quantity input{
+    float: right;
+    height: 100%;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid #a9a9a9;
+    padding-left: 5px;
+}
+
+div#photos{
+    width: 45%;
+    padding: 0;
+    height: auto;
+    float: left;
+}
+
+div#photos .main-photo{
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+div#photos .main-photo img{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}

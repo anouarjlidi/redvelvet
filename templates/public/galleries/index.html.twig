@@ -1,0 +1,26 @@
+{% extends "public/page-base.html.twig" %}
+
+{% block pageStylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/gallery.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <section id="gallery">
+
+            <h2>Galerijos</h2>
+
+            {% include 'public/galleries/sections/galleries.html.twig' %}
+            {% include 'public/galleries/sections/pagination.html.twig' %}
+
+        </section>
+
+    </main>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "public/page-base.html.twig" %}
+
+{% block pageStylesheets %}
+
+    <script type="application/javascript" src="{{ asset("js/slideshow.js") }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/pages/home/news.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/home/slideshow.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/home/categories.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/home/products.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/home/feedback.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/product-element.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css">
+
+{% endblock %}
+
+{% block content %}
+
+    {% include 'public/home/sections/slideshow.html.twig' %}
+    {% include 'public/home/sections/news.html.twig' %}
+    {% include 'public/home/sections/categories.html.twig' %}
+    {% include 'public/home/sections/products.html.twig' %}
+    {% include 'public/home/sections/feedback.html.twig' %}
+
+{% endblock %}

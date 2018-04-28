@@ -1,0 +1,105 @@
+div.product-element{
+    display: inline-block;
+    height: auto;
+    width: 230px;
+    vertical-align: top;
+    margin: 10px 20px;
+}
+
+div.product-element div.photo{
+    width: 100%;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    margin-bottom: 25px;
+    transform: translateY(150px);
+}
+
+div.product-element div.photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Safari */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    cursor: pointer;
+}
+
+div.product-element div.photo img:hover{
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+
+
+div.product-element div.description{
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+div.product-element a{
+    text-decoration: none;
+    width: 100%;
+    height: 100px;
+}
+
+div.product-element div.description h3{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 25px;
+    height: auto;
+    text-align: center;
+    font-size: 1.7em;
+    white-space: nowrap;
+    color:#ff6d84;
+    font-family: sail;
+    font-weight: bold;
+}
+
+div.product-element div.description p{
+    margin: 0;
+    text-align: left;
+    display: block;
+    height: 90px;
+    font-size: 1em;
+    color:#606060;
+    border-bottom: 1px solid #7e7e7e;
+    font-family: 'Arapey';
+    margin-bottom: 15px;
+}
+div.product-element div.description button{
+    display: block;
+    height: 35px;
+    width: calc(100% - 100px);
+    background-color: #7e7e7e;
+    color:white;
+    float: right;
+    border:1px solid #7e7e7e;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+    line-height: 32px;
+    font-family: 'Arapey';
+}
+
+div.product-element div.description button:hover{
+    background-color: white;
+    color: #7e7e7e;
+    font-weight: bold;
+}
+
+div.product-element div.description label{
+    float: left;
+    width: 100px;
+    height: 35px;
+    display: block;
+    color:#ff6d84;
+    font-family: 'Arapey';
+    text-align: left;
+    font-size: 1.7em;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+div.product-element label sup{
+    font-size: 0.6em;
+}

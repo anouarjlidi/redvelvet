@@ -1,0 +1,97 @@
+.date{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    font-family: 'Arapey';
+    color:#606060;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.content{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.content .photo{
+    float: left;
+    width: 40%;
+    height: auto;
+}
+
+.content .photo img{
+    width: 100%;
+    height: auto;
+}
+
+.content .description{
+    float: right;
+    width: calc(60% - 50px);
+    margin-left: 50px;
+}
+
+.content .description > div{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 25px;
+    padding-top: 25px;
+}
+
+.content .description h3{
+    text-align: left;
+    color: #606060;
+    float: left;
+    font-size: 1.6em;
+    font-family: sail;
+    margin: 0;
+}
+
+.content .description p{
+    text-align: justify;
+    margin: 0;
+    display: block;
+    margin-bottom: 25px;
+    padding-bottom: 0;
+    font-size: 1em;
+    line-height: 1.1em;
+    color: #606060;
+    font-family: 'Arapey';
+}
+
+.content .description a{
+    float: right;
+    width: 150px;
+    height: 35px;
+    background-color: #ff6d84;
+    color: white;
+    text-decoration: none;
+    line-height: 35px;
+    font-family: 'Arapey';
+    border-radius: 5px;
+    border: 1px solid #ff6d84;
+}
+
+
+.content .description label{
+    float: right;
+    width: 100px;
+    height: 35px;
+    display: block;
+    color:#ff6d84;
+    font-family: 'Arapey';
+    text-align: center;
+    font-size: 1.7em;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.content .description a:hover{
+    background-color: white;
+    border:1px solid #ff6d84;
+    color:#ff6d84;
+    font-weight: bold;
+}

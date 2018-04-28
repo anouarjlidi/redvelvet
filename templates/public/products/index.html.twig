@@ -1,0 +1,26 @@
+{% extends "public/page-base.html.twig" %}
+
+{% block pageStylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('css/product-element.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <section id="products">
+
+            <h2>Produktai</h2>
+
+            {% include 'public/products/sections/products.html.twig' %}
+            {% include 'public/products/sections/pagination.html.twig' %}
+
+        </section>
+
+    </main>
+
+{% endblock %}

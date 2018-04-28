@@ -1,0 +1,14 @@
+section{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+
+section h2{
+    text-align: center;
+    color:#ff6d84;
+    font-size: 2em;
+    font-family: sail;
+    padding-bottom: 25px;
+}

@@ -1,0 +1,92 @@
+div.notification{
+    position: fixed;
+    width: 300px;
+    height: 120px;
+    background-color: white;
+    border-radius: 5px;
+    bottom: 25px;
+    left: 25px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    transform: translateX(-250px);
+    transition: all 0.6s ease-in-out 0s, visibility 0s linear 0.6s, z-index 0s linear 0.6s;
+
+}
+
+.show-notification{
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 2 !important;
+    transform: translateX(0) !important;
+    transition-delay: 0s !important;
+}
+
+div.notification > div.notification-header{
+    width: 100%;
+    height: 30px;
+    background-color: #ff6d84;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+div.notification > div.notification-header > p{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    color:white;
+    margin: 0;
+    float: left;
+    font-family: 'Arapey';
+}
+
+div.notification > div.notification-header > i{
+    float: right;
+    cursor: pointer;
+    color:white;
+    margin-top: 3px;
+}
+
+div.notification > div.notification-content{
+    width: 100%;
+    padding: 10px;
+    height: 90px;
+}
+
+div.notification > div.notification-content > div:first-of-type{
+    width: 50px;
+    float: left;
+    position: relative;
+    height: 100%;
+}
+
+div.notification > div.notification-content > div:first-of-type > img{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+div.notification > div.notification-content > div:last-of-type{
+    float: right;
+    width: calc(100% - 50px);
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 15px;
+}
+
+div.notification > div.notification-content > div:last-of-type p{
+    color:black;
+    font-family: OpenSans;
+    display: table-cell;
+    font-size: 0.9em;
+   line-height: 70px;
+}

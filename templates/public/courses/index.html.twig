@@ -1,0 +1,27 @@
+{% extends "public/page-base.html.twig" %}
+
+{% block pageStylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/course-element.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/courses.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <section id="courses">
+
+            <h2>Mokymai</h2>
+
+            {% include 'public/courses/sections/courses.html.twig' %}
+            {% include 'public/courses/sections/pagination.html.twig' %}
+
+        </section>
+
+    </main>
+
+{% endblock %}

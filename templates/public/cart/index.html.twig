@@ -1,0 +1,24 @@
+{% extends "public/page-base.html.twig" %}
+
+{% block pageStylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <section id="cart">
+
+            <h2>Krepšelis</h2>
+
+            {% include 'public/cart/sections/cart.html.twig' %}
+
+        </section>
+
+    </main>
+
+{% endblock %}

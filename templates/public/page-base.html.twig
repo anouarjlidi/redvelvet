@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/notification.css') }}">
+    {% block pageStylesheets %}{% endblock %}
+
+{% endblock %}
+
+{% block body %}
+
+    {% include 'public/notifications.html.twig' %}
+    {% include 'public/navigation.html.twig' %}
+    {% block content %}{% endblock %}
+    {% include 'public/footer.html.twig' %}
+
+    <script type="application/javascript" src="{{ asset("js/map.js") }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

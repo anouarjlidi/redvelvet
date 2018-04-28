@@ -1,0 +1,30 @@
+<div class="products">
+
+    {% for product in products %}
+
+        <div class="product-element">
+
+            <div class="photo animated-element">
+
+                <a href="/product/{{ product.id }}">
+
+                    <img alt="{{ product.title }}" src="{{  asset(product.photo) }}">
+
+                </a>
+
+            </div>
+
+            <div class="description animated-element">
+
+                <a href="/product/{{ product.id }}"><h3>{{ product.title }}</h3></a>
+                <p>{{ product.description }}</p>
+                <label>{{ product.price }} <sup>€/vnt.</sup></label>
+                <button onclick="addProduct({{ product.id }})">Pridėti į krepšelį</button>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+</div>

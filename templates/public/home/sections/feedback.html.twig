@@ -1,0 +1,35 @@
+<section id="feedback">
+
+    <h2 class="animated-element">Atsiliepimai</h2>
+
+    {% for feedback in feedbacks %}
+
+    <div class="feedback-element animated-element">
+
+        <span>
+
+                <img alt="left quates" src="{{ asset('img/quates.svg') }}">
+
+            </span>
+
+        <p>
+            {{ feedback.comment }}
+        </p>
+
+        <label>
+
+            {{ feedback.fullName }}
+
+        </label>
+
+    </div>
+
+    {% endfor %}
+
+    <div class="cake-logo">
+
+        <img src="{{ asset("img/cake.svg") }}">
+
+    </div>
+
+</section>

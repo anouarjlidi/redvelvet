@@ -1,0 +1,23 @@
+{% for gallery in galleries %}
+
+    <div class="gallery">
+
+        <div class="photo">
+
+            <a href="/gallery/{{ gallery.id }}">
+
+                <img src="{{ asset(gallery.photo) }}">
+
+            </a>
+
+        </div>
+
+        <div class="link">
+
+            <a href="/gallery/{{ gallery.id }}">{{ gallery.title }}</a>
+
+        </div>
+
+    </div>
+
+{% endfor %}

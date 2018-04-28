@@ -1,0 +1,124 @@
+section#categories{
+    width: 100%;
+    position: relative;
+    height: auto;
+    overflow: visible;
+    background-color: #f3f0e9;
+    padding: 125px;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    border-top: 2px solid #ff6d84;
+}
+
+section#categories > div:nth-child(1) h2{
+    text-align: center;
+    font-family: sail;
+    color:#ff6d84;
+    font-size: 2.3em;
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+section#categories > div:nth-child(1) p{
+    text-align: justify;
+    font-family: 'Arapey';
+    font-size: 1em;
+    line-height: 1.3em;
+    color:#808080;
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+section#categories > div:nth-child(2){
+    margin-top: 75px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+section#categories > div:nth-child(2) > div{
+    display: inline-block;
+    margin: 10px;
+    height: auto;
+    overflow: hidden;
+    width: 240px;
+    vertical-align: top;
+}
+div.category > div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    -webkit-transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Safari */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+div.category > div img:hover{
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+
+div.category > div:first-of-type{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 230px;
+    background-color: black;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0 16px 8px -8px #696969;
+    -moz-box-shadow: 0 16px 8px -8px #696969;
+    box-shadow: 0 16px 8px -8px #696969;
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+div.category > div:last-of-type{
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+div.category a{
+    text-decoration: none;
+}
+
+div.category h3{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1.7em;
+    color:#ff6d84;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-family: sail;
+    font-weight: bold;
+}
+div.category p{
+    margin: 0;
+    padding: 5px;
+    padding-bottom: 0;
+    font-size: 1em;
+    line-height: 1.3em;
+    color:grey;
+    text-align: justify;
+    font-family: 'Arapey';
+}
+div.category a.button{
+    display: inline-block;
+    margin-top: 20px;
+    width: 150px;
+    height: 35px;
+    background-color: #ff6d84;
+    color:white;
+    border:none;
+    text-decoration: none;
+    line-height: 37px;
+    font-family: 'Arapey';
+    border-radius: 5px;
+    border:1px solid #ff6d84;
+}
+
+div.category a.button:hover{
+    background-color: white;
+    border:1px solid #ff6d84;
+    color:#ff6d84;
+    font-weight: bold;
+}

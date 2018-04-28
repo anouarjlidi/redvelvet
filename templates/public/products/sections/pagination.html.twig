@@ -1,0 +1,42 @@
+{% if pagesCount > 1 %}
+
+    <div id="pagination" class="animated-element">
+
+        {% if page > 1 %}
+
+            <div class="arrow">
+
+                <i class="material-icons">chevron_left</i>
+
+                <a href="/products/{{ page-1 }}">Atgal</a>
+
+            </div>
+
+        {% endif %}
+
+        {% for i in 1..pagesCount %}
+
+            <div class="page">
+
+                <a {% if i == page %} class="active" {% endif %} href="/products/{{ i }}">{{ i }}</a>
+
+            </div>
+
+        {% endfor %}
+
+        {% if page < pagesCount %}
+
+
+            <div class="arrow">
+
+                <a href="/products/{{ page+1 }}">Pirmyn</a>
+                <i class="material-icons">chevron_right</i>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+
+{% endif %}
