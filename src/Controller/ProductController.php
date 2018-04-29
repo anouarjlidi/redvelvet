@@ -9,6 +9,8 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Form\ProductType;
+use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -27,6 +29,29 @@ class ProductController extends Controller
 
         return $this->render('public/product/index.html.twig', array(
             'product' => $product
+        ));
+    }
+
+    /**
+     * @Route("/admin/product/add", name="add product")
+     */
+    public function addAction(Request $request, FileUploader $fileUploader)
+    {
+        $product = new Product();
+
+        $form = $this->createForm(ProductType::class, $product);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $filename = $fileUploader->upload($product->getPhoto());
+            $product->setPhoto($filename);
+            $this->getDoctrine()->getRepository(Product::class)->add($product);
+
+        }
+
+        return $this->render('private/product/add.html.twig', array(
+            'form' => $form->createView()
         ));
     }
 

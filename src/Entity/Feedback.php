@@ -12,7 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\FeedbackRepository")
- * @ORM\Table(name="feedbacks")
  *
  */
 class Feedback

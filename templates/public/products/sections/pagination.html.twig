@@ -1,6 +1,6 @@
 {% if pagesCount > 1 %}
 
-    <div id="pagination" class="animated-element">
+    <div id="pagination">
 
         {% if page > 1 %}
 
@@ -8,7 +8,7 @@
 
                 <i class="material-icons">chevron_left</i>
 
-                <a href="/products/{{ page-1 }}">Atgal</a>
+                <a href="/products/{{ category.id }}/{{ page-1 }}">Atgal</a>
 
             </div>
 
@@ -18,7 +18,7 @@
 
             <div class="page">
 
-                <a {% if i == page %} class="active" {% endif %} href="/products/{{ i }}">{{ i }}</a>
+                <a {% if i == page %} class="active" {% endif %} href="/products/{{ category.id }}/{{ i }}">{{ i }}</a>
 
             </div>
 
@@ -29,7 +29,7 @@
 
             <div class="arrow">
 
-                <a href="/products/{{ page+1 }}">Pirmyn</a>
+                <a href="/products/{{ category.id }}/{{ page+1 }}">Pirmyn</a>
                 <i class="material-icons">chevron_right</i>
 
             </div>
