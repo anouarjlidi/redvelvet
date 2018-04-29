@@ -1,116 +1,38 @@
-<section id="categories">
+<section id="categories" class="dark-section section">
 
     <div>
 
-        <h2 class="animated-element">Malonumas ir Skonis Vienoje Vietoje</h2>
+        <h2 class="animated-element">Produktų kategorijos</h2>
 
     </div>
 
     <div>
 
-        <div class="category">
+        {% for category in categories %}
 
-            <div class="animated-element">
+            <div class="item animated-element">
 
-                <a href="/">
+                <div class="photo">
 
-                    <img alt="products" src="{{ asset("img/produktas.jpg") }}">
+                    <a href="/categories/{{ category.id }}">
 
-                </a>
+                        <img alt="{{ category.title }}" src="{{ asset(category.photo) }}">
 
-            </div>
+                    </a>
 
-            <div class="animated-element">
+                </div>
 
-                <a href="/"><h3>Produktai</h3></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
-                    ex non magna convallis aliquam. Nulla ullamcorper elit a ante ullamcorper,
-                    nec malesuada
-                    massa commodo.</p>
+                <div class="description">
 
-                <a class="button" href="/">Plačiau...</a>
+                    <a href="/categories/{{ category.id }}"><h3>{{ category.title }}</h3></a>
 
-            </div>
+                    <p>{{ category.description }}</p>
 
-        </div>
-
-        <div class="category">
-
-            <div class="animated-element">
-
-                <a href="/">
-
-                    <img alt="products" src="{{ asset("img/mokymai.jpg") }}">
-
-                </a>
+                </div>
 
             </div>
 
-            <div class="animated-element">
-
-                <a href="/"><h3>Mokymai</h3></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
-                    ex non magna convallis aliquam. Nulla ullamcorper elit a ante ullamcorper,
-                    nec malesuada
-                    massa commodo.</p>
-
-                <a class="button" href="/">Plačiau...</a>
-
-            </div>
-
-        </div>
-
-        <div class="category">
-
-            <div class="animated-element">
-
-                <a href="/">
-
-                    <img alt="products" src="{{ asset("img/blogas.jpg") }}">
-
-                </a>
-
-            </div>
-
-            <div class="animated-element">
-
-                <a href="/"><h3>Blog'as</h3></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
-                    ex non magna convallis aliquam. Nulla ullamcorper elit a ante ullamcorper,
-                    nec malesuada
-                    massa commodo.</p>
-
-                <a class="button" href="/">Plačiau...</a>
-
-            </div>
-
-        </div>
-
-        <div class="category">
-
-            <div class="animated-element">
-
-                <a href="/">
-
-                    <img alt="products" src="{{ asset("img/galerija.jpg") }}">
-
-                </a>
-
-            </div>
-
-            <div class="animated-element">
-
-                <a href="/"><h3>Galerija</h3></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
-                    ex non magna convallis aliquam. Nulla ullamcorper elit a ante ullamcorper,
-                    nec malesuada
-                    massa commodo.</p>
-
-                <a class="button" href="/">Plačiau...</a>
-
-            </div>
-
-        </div>
+        {% endfor %}
 
     </div>
 

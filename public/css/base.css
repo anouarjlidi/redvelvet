@@ -44,6 +44,11 @@ div.cake-logo{
     transform: translate(-50%, 0);
 }
 
+.animated-element{
+    opacity: 0;
+    transform: translateY(150px);
+}
+
 .showfrombottom{
     -webkit-animation: showfrombottomeffect 1.5s ease-out forwards;
     -moz-animation: showfrombottomeffect 1.5s ease-out forwards;
@@ -90,9 +95,6 @@ input:focus {
     border: 1px solid white !important;
 }
 
-/* Hard "outline" with box-shadow: */
-input:focus {
-    box-shadow: 0 0 0 2pt #ff6d84;
-    outline: none;
-    border: 1px solid white !important;
+a{
+    text-decoration: none;
 }

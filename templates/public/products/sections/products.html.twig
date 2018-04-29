@@ -2,7 +2,7 @@
 
     {% for product in products %}
 
-        <div class="product-element">
+        <div class="item">
 
             <div class="photo animated-element">
 
@@ -18,8 +18,13 @@
 
                 <a href="/product/{{ product.id }}"><h3>{{ product.title }}</h3></a>
                 <p>{{ product.description }}</p>
-                <label>{{ product.price }} <sup>€/vnt.</sup></label>
-                <button onclick="addProduct({{ product.id }})">Pridėti į krepšelį</button>
+                <div class="price">
+
+                    <label>{{ product.price }} <sup>€/kg.</sup></label>
+                    <button class="button" onclick="addProduct({{ product.id }})">Pridėti į krepšelį</button>
+
+                </div>
+
 
             </div>
 

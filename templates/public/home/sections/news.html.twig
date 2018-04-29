@@ -1,57 +1,60 @@
 <section id="news">
 
-    <div class="new">
+    <h2 class="animated-element">Artimiausi mokymai</h2>
 
-        <div class="animated-element">
+    {% for course in courses %}
 
-            <a href="/product">
+        <div class="new">
 
-                <img src="{{ asset("img/mokymai1.jpg") }}">
+            <div class="animated-element">
 
-            </a>
+                <a href="/course/{{ course.id }}">
 
-        </div>
+                    <img src="{{ asset(course.photo) }}">
 
-        <div class="animated-element">
+                </a>
 
-            <h3>Artimiausi mokymai</h3>
+            </div>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
-                ex non magna convallis aliquam. Nulla ullamcorper elit a ante ullamcorper,
-                nec malesuada
-                massa commodo.</p>
+            <div class="animated-element">
 
-            <a class="button" href="/">Registracija</a>
+                <h3>{{ course.title }}</h3>
 
-        </div>
+                <p>{{ course.description }}</p>
 
-    </div>
+                <a class="button" href="/course/{{ course.id }}">Daugiau</a>
 
-    <div class="new">
-
-        <div class="animated-element">
-
-            <a href="/product">
-
-                <img src="{{ asset("img/akcija3.png") }}">
-
-            </a>
+            </div>
 
         </div>
 
-        <div class="animated-element">
+    {% endfor %}
 
-            <h3>Akcija</h3>
+    {#<div class="new">#}
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada
-                ex non magna convallis aliquam. Nulla ullamcorper elit a ante ullamcorper,
-                nec malesuada
-                massa commodo.</p>
+        {#<div class="animated-element">#}
 
-            <a class="button" href="/">Plačiau...</a>
+            {#<a href="/product">#}
 
-        </div>
+                {#<img src="{{ asset("img/akcija3.png") }}">#}
 
-    </div>
+            {#</a>#}
+
+        {#</div>#}
+
+        {#<div class="animated-element">#}
+
+            {#<h3>Akcija</h3>#}
+
+            {#<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada#}
+                {#ex non magna convallis aliquam. Nulla ullamcorper elit a ante ullamcorper,#}
+                {#nec malesuada#}
+                {#massa commodo.</p>#}
+
+            {#<a class="button" href="/">Plačiau...</a>#}
+
+        {#</div>#}
+
+    {#</div>#}
 
 </section>

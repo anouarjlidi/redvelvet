@@ -1,0 +1,34 @@
+.feedback{
+    display: inline-block;
+    margin: 10px;
+    height: auto;
+    position: relative;
+    width: 350px;
+    padding: 25px;
+    border-radius: 5px;
+    vertical-align: top;
+    background-color: white;
+    -webkit-box-shadow: 0 16px 8px -8px #696969;
+    -moz-box-shadow: 0 16px 8px -8px #696969;
+    box-shadow: 0 16px 8px -8px #696969;
+}
+
+.feedback span{
+    position: absolute;
+    top: -15px;
+    left: 5px;
+    width: auto;
+    height: 40px;
+}
+ .feedback p{
+     text-align: justify;
+     font-family: 'Arapey';
+     display: block;
+     color: #606060;
+     margin-bottom: 25px;
+ }
+
+.feedback label{
+    color:#ff6d84;
+    font-size: 1.1em;
+}

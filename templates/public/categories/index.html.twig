@@ -4,7 +4,6 @@
 
     <link rel="stylesheet" href="{{ asset('css/item.css') }}">
     <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
 
 {% endblock %}
 
@@ -12,12 +11,19 @@
 
     <main>
 
-        <section id="products">
+        <section id="categories">
 
-            <h2>{{ category.title }}</h2>
+            {% if parent is defined %}
 
-            {% include 'public/products/sections/products.html.twig' %}
-            {% include 'public/products/sections/pagination.html.twig' %}
+                <h2>{{ parent.title }}</h2>
+
+            {% else %}
+
+                <h2>Produktų kategorijos</h2>
+
+            {% endif %}
+
+            {% include 'public/categories/sections/categories.html.twig' %}
 
         </section>
 

@@ -13,9 +13,39 @@
 
         <section id="course">
 
-            <h2>{{ course.title }}</h2>
+            <h2>Mokymai</h2>
 
-            {% include 'public/course/sections/course.html.twig' %}
+            <div class="date">
+
+                {{ course.date | date('Y-m-d H:i') }}
+
+            </div>
+
+            <div class="content">
+
+                <div class="photo">
+
+                    <img src="{{ asset(course.photo) }}">
+
+                </div>
+
+                <div class="description">
+
+                    <h3>{{ course.title }}</h3>
+
+                    <p>p{{ course.description }}</p>
+
+                    <div class="price">
+
+                        <label>{{ course.price }} <sup>€/vnt.</sup></label>
+
+                    </div>
+
+                    <a class="button" href="/course/{{ course.id }}/registration">Registracija</a>
+
+                </div>
+
+            </div>
 
         </section>
 

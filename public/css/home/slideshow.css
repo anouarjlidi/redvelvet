@@ -1,0 +1,43 @@
+section#slideshow{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background-color: #f3f0e9;
+    overflow: hidden;
+}
+
+div.swiper-container{
+    width: 100%;
+    height: 100%;
+}
+
+div.swiper-slide{
+    width: auto;
+    height: 100%;
+    background-color: white;
+}
+
+div.slideshow-con > div > img{
+    width: auto;
+    height: 100%;
+}
+
+.swiper-slide{
+    overflow: hidden;
+}
+
+.swiper-slide img{
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.swiper-slide-active img{
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    -o-filter: blur(0);
+    -ms-filter: blur(0);
+    filter: blur(0);
+}

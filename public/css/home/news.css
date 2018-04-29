@@ -8,6 +8,15 @@ section#news{
     position: relative;
 }
 
+section#news h2{
+    text-align: center;
+    font-family: sail;
+    color: #ff6d84;
+    font-size: 2.3em;
+    margin-top: 0;
+    margin-bottom: 100px;
+}
+
 section#news > div.new{
     height: auto;
     width: 450px;
@@ -36,7 +45,6 @@ section#news > div > div > h3{
 section#news > div > div > p{
     display: block;
     width: 100%;
-    height: auto;
     margin: 0;
     color:#808080;
     padding-left: 10px;
@@ -45,6 +53,12 @@ section#news > div > div > p{
     font-family: 'Amiri';
     font-size: 1em;
     line-height: 1.3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    height: 3.9em;
 }
 
 section#news > div > div:last-of-type > a{
@@ -79,18 +93,6 @@ section#news > div > div:first-of-type{
     -moz-box-shadow: 0 16px 8px -8px #696969;
     box-shadow: 0 16px 8px -8px #696969;
     background-color: #e6e6e6;
-    opacity: 0;
-    transform: translateY(150px);
-}
-
-section#news > div > div:last-of-type{
-    opacity: 0;
-    transform: translateY(150px);
-}
-
-section#news > div > div img:hover{
-    opacity: 0.5;
-    transform: scale(1.1);
 }
 
 section#news > div > div img{

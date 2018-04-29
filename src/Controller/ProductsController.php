@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,16 +26,19 @@ class ProductsController extends Controller
     }
 
     /**
-     * @Route("/products/{page}", name="products")
+     * @Route("/products/{category}/{page}", name="products")
      * @Method({"GET"})
      */
-    public function indexAction($page)
+    public function indexAction($page, $category)
     {
-        $products = $this->getDoctrine()->getRepository(Product::class)->findBy([], [], $this->limit, ($page-1)*$this->limit);
-        $pagesCount = ceil($this->getDoctrine()->getRepository(Product::class)->count([])/$this->limit);
+        $category = $this->getDoctrine()->getRepository(Category::class)->find($category);
+
+        $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['category' => $category], [], $this->limit, ($page-1)*$this->limit);
+        $pagesCount = ceil($this->getDoctrine()->getRepository(Product::class)->count(['category' => $category])/$this->limit);
 
         return $this->render('public/products/index.html.twig', array(
             'products' => $products,
+            'category' => $category,
             'page' => $page,
             'pagesCount' => $pagesCount
         ));

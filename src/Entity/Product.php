@@ -25,9 +25,10 @@ class Product
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="products")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
-    private $categoryId;
+    private $category;
 
     /**
      * @ORM\Column(type="string")
@@ -49,39 +50,24 @@ class Product
      */
     private $photo;
 
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    public function setPrice($price)
-    {
-        $this->price = $price;
-    }
-
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    }
-
-    public function setCategoryId($categoryId)
-    {
-        $this->categoryId = $categoryId;
-    }
-
     public function getId()
     {
         return $this->id;
     }
 
-    public function getCategoryId()
+    public function setId($id)
     {
-        return $this->categoryId;
+        $this->id = $id;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
     }
 
     public function getTitle()
@@ -89,14 +75,29 @@ class Product
         return $this->title;
     }
 
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
     public function getPrice()
     {
         return $this->price;
     }
 
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 
     public function getPhoto()
@@ -108,4 +109,6 @@ class Product
     {
         $this->photo = $photo;
     }
+
+
 }

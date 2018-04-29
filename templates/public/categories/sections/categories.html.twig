@@ -1,0 +1,51 @@
+<div class="categories">
+
+    {% for category in categories %}
+
+        <div class="item animated-element">
+
+            <div class="photo">
+
+                {% if category.children | length > 0 %}
+
+                    <a href="/categories/{{ category.id }}">
+
+                        <img alt="{{ category.title }}" src="{{ asset(category.photo) }}">
+
+                    </a>
+
+                {% else %}
+
+                    <a href="/products/{{ category.id }}/1">
+
+                        <img alt="{{ category.title }}" src="{{ asset(category.photo) }}">
+
+                    </a>
+
+                {% endif %}
+
+
+
+            </div>
+
+            <div class="description">
+
+                {% if category.children | length > 0 %}
+
+                    <a href="/categories/{{ category.id }}"><h3>{{ category.title }}</h3></a>
+
+                {% else %}
+
+                    <a href="/products/{{ category.id }}/1"><h3>{{ category.title }}</h3></a>
+
+                {% endif %}
+
+                <p>{{ category.description }}</p>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+</div>

@@ -13,6 +13,8 @@ use App\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use App\Entity\Course;
+use App\Entity\Category;
 
 class HomeController extends Controller{
 
@@ -22,13 +24,14 @@ class HomeController extends Controller{
      */
     public function indexAction()
     {
-        $products = $this->getDoctrine()->getRepository(Product::class)->findBy([], [], 4, 0);
-
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findBy([], [], 4, 0);
+        $courses = $this->getDoctrine()->getRepository(Course::class)->findBy([], ['date' => 'desc'], 2, 0);
         $feedbacks = $this->getDoctrine()->getRepository(Feedback::class)->findBy([], [], 3, 0);
 
         return $this->render('public/home/index.html.twig', array(
-            'products' => $products,
-            'feedbacks' => $feedbacks
+            'categories' => $categories,
+            'feedbacks' => $feedbacks,
+            'courses' => $courses
         ));
     }
 

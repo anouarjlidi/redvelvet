@@ -1,0 +1,26 @@
+section.section{
+    width: 100%;
+    position: relative;
+    height: auto;
+    overflow: visible;
+    padding: 125px;
+    padding-top: 75px;
+    padding-bottom: 100px;
+    border-top: 2px solid #ff6d84;
+}
+
+section.dark-section{
+    background-color: #B7AE9F;
+}
+
+section.light-section{
+    background-color: #f3f0e9;
+}
+
+section.section h2{
+    text-align: center;
+    font-family: sail;
+    color:#ff6d84;
+    font-size: 2.3em;
+    margin-bottom: 75px;
+}

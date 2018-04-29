@@ -1,16 +1,16 @@
-<section id="feedback">
+<section class="section light-section" id="feedbacks">
 
     <h2 class="animated-element">Atsiliepimai</h2>
 
     {% for feedback in feedbacks %}
 
-    <div class="feedback-element animated-element">
+    <div class="feedback animated-element">
 
         <span>
 
-                <img alt="left quates" src="{{ asset('img/quates.svg') }}">
+            <img alt="left quates" src="{{ asset('img/quates.svg') }}">
 
-            </span>
+        </span>
 
         <p>
             {{ feedback.comment }}

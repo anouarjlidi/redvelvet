@@ -1,49 +1,47 @@
-div.product-element{
+div.item{
     display: inline-block;
+    margin: 10px;
     height: auto;
-    width: 230px;
-    vertical-align: top;
-    margin: 20px;
-}
-
-div.product-element div.photo{
-    width: 100%;
-    height: 230px;
-    position: relative;
     overflow: hidden;
-    opacity: 0;
+    width: 240px;
     margin-bottom: 25px;
-    transform: translateY(150px);
-    -webkit-box-shadow: 0 16px 8px -8px #696969;
-    -moz-box-shadow: 0 16px 8px -8px #696969;
-    box-shadow: 0 16px 8px -8px #696969;
+    vertical-align: top;
 }
 
-div.product-element div.photo img{
+div.item div img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
     -webkit-transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Safari */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    cursor: pointer;
 }
 
-div.product-element div.photo img:hover{
+div.item div img:hover{
     opacity: 0.5;
     transform: scale(1.1);
 }
 
-div.product-element a{
-    text-decoration: none;
+div.item div.photo{
     width: 100%;
-    height: 100px;
+    position: relative;
+    overflow: hidden;
+    height: 230px;
+    background-color: black;
+    -webkit-box-shadow: 0 16px 8px -8px #696969;
+    -moz-box-shadow: 0 16px 8px -8px #696969;
+    box-shadow: 0 16px 8px -8px #696969;
+    margin-bottom: 15px;
 }
 
-div.product-element div.description h3{
+div.item div.description h3{
+    display: table-cell;
+    vertical-align: middle;
     margin: 0;
-    padding: 0;
     margin-bottom: 25px;
-    height: 50px;
+    padding: 0;
+    line-height: 25px;
+    height: 65px;
     text-align: center;
     font-size: 1.7em;
     color:#ff6d84;
@@ -51,31 +49,42 @@ div.product-element div.description h3{
     font-weight: bold;
 }
 
-div.product-element div.description > div{
-    width: 100%;
-    border-bottom: 1px solid #7e7e7e;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
+section.light-section div.item div.description p{
+    color:#606060;
 }
 
-div.product-element div.description p{
+section.dark-section div.item div.description p{
+    color:white;
+}
+
+div.item div.description p{
     margin: 0;
-    text-align: justify;
+    padding: 5px;
+    padding-bottom: 0;
     font-size: 1em;
-    color:#606060;
-    height: 4.8em;
+    text-align: justify;
     font-family: 'Arapey';
-    line-height: 1.2em;
+    line-height: 1.3em;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
+    height: 5.5em;
+
 }
-div.product-element div.description button{
+
+div.item div.description .price{
+    width: 100%;
+    height: 45px;
+    padding-top: 10px;
+    border-top: 1px solid #7e7e7e;;
+}
+
+div.item div.description .price .button{
     display: block;
     height: 35px;
-    width: calc(100% - 100px);
+    width: calc(100% - 110px);
     background-color: #7e7e7e;
     color:white;
     float: right;
@@ -87,25 +96,26 @@ div.product-element div.description button{
     font-family: 'Arapey';
 }
 
-div.product-element div.description button:hover{
+div.item div.description .price .button:hover{
     background-color: white;
     color: #7e7e7e;
     font-weight: bold;
 }
 
-div.product-element div.description label{
+div.item div.description .price label{
     float: left;
     width: 100px;
     height: 35px;
+    padding-left: 10px;
     display: block;
     color:#ff6d84;
     font-family: 'Arapey';
     text-align: left;
-    font-size: 1.7em;
+    font-size: 1.8em;
     font-weight: bold;
     vertical-align: top;
 }
 
-div.product-element label sup{
+div.item div.description .price label sup{
     font-size: 0.6em;
 }
