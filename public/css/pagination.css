@@ -2,7 +2,7 @@ div#pagination{
     width: 100%;
     height: 25px;
     margin-top: 50px;
-    text-align: right;
+    text-align: center;
 }
 
 div#pagination > div{

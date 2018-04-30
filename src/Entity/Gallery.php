@@ -9,6 +9,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OneToMany;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\GalleryRepository")
@@ -17,10 +18,10 @@ use Doctrine\ORM\Mapping as ORM;
 class Gallery
 {
     /**
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
+ * @ORM\Column(type="integer")
+ * @ORM\Id
+ * @ORM\GeneratedValue(strategy="AUTO")
+ */
     private $id;
 
     /**
@@ -32,6 +33,11 @@ class Gallery
      * @ORM\Column(type="string")
      */
     private $photo;
+
+    /**
+     * @OneToMany(targetEntity="App\Entity\Photo", mappedBy="gallery")
+     */
+    private $photos;
 
     public function getId()
     {
@@ -61,6 +67,16 @@ class Gallery
     public function setPhoto($photo)
     {
         $this->photo = $photo;
+    }
+
+    public function getPhotos()
+    {
+        return $this->photos;
+    }
+
+    public function setPhotos($photos)
+    {
+        $this->photos = $photos;
     }
 
 }

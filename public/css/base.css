@@ -50,11 +50,11 @@ div.cake-logo{
 }
 
 .showfrombottom{
-    -webkit-animation: showfrombottomeffect 1.5s ease-out forwards;
-    -moz-animation: showfrombottomeffect 1.5s ease-out forwards;
-    -ms-animation: showfrombottomeffect 1.5s ease-out forwards;
-    -o-animation: showfrombottomeffect 1.5s ease-out forwards;
-    animation: showfrombottomeffect 1.5s ease-out forwards;
+    -webkit-animation: showfrombottomeffect 1.2s ease-out forwards;
+    -moz-animation: showfrombottomeffect 1.2s ease-out forwards;
+    -ms-animation: showfrombottomeffect 1.2s ease-out forwards;
+    -o-animation: showfrombottomeffect 1.2s ease-out forwards;
+    animation: showfrombottomeffect 1.2s ease-out forwards;
 }
 
 @-moz-keyframes showfrombottomeffect {
@@ -112,6 +112,7 @@ a{
     font-family: 'Arapey';
     font-size: 1em;
     margin-right: 25px;
+    margin-bottom: 25px;
 }
 
 .no-data a{
@@ -124,6 +125,7 @@ a{
     line-height: 35px;
     font-family: 'Arapey';
     border-radius: 5px;
+    margin-bottom: 25px;
     border: 1px solid #ff6d84;
 }
 

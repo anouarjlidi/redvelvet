@@ -2,8 +2,8 @@
 
 {% block pageStylesheets %}
 
-    <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
 
 {% endblock %}
@@ -12,12 +12,11 @@
 
     <main>
 
-        <section id="galleries">
+        <section id="gallery">
 
-            <h2>Galerijos</h2>
+            <h2>{{ gallery.title }}</h2>
 
-            {% include 'public/galleries/sections/galleries.html.twig' %}
-            {% include 'public/galleries/sections/pagination.html.twig' %}
+            {% include 'public/gallery/sections/photos.html.twig' %}
 
         </section>
 

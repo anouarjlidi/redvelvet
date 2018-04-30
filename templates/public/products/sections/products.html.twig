@@ -32,4 +32,26 @@
 
     {% endfor %}
 
+    {% if products | length == 0 %}
+
+        <div class="no-data">
+
+            <p>Atsiprašome, prekių šiuo metu šioje kategorijoje nėra</p>
+
+            {% if category.parent %}
+
+                <a class="button" href="/categories/{{ category.parent.id }}">Grįžti</a>
+
+            {% else %}
+
+                <a class="button" href="/categories">Grįžti</a>
+
+            {% endif %}
+
+
+
+        </div>
+
+    {% endif %}
+
 </div>

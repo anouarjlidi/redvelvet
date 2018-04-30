@@ -1,0 +1,24 @@
+{% for photo in gallery.photos %}
+
+    <div class="gallery animated-element">
+
+        <div class="photo">
+
+            <img src="{{ asset(photo.src) }}">
+
+        </div>
+
+    </div>
+
+{% endfor %}
+
+{% if gallery.photos | length == 0 %}
+
+    <div class="no-data">
+
+        <p>Atsiprašome, šiuo metu nuotraukų šioje galerijoje nėra</p>
+        <a href="/galleries/1" class="button">Grįžti</a>
+
+    </div>
+
+{% endif %}

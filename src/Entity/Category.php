@@ -54,12 +54,12 @@ class Category
     private $products;
 
     /**
-     * @OneToMany(targetEntity="Category", mappedBy="parent")
-     */
+ * @OneToMany(targetEntity="App\Entity\Category", mappedBy="parent")
+ */
     private $children;
 
     /**
-     * @ManyToOne(targetEntity="Category", inversedBy="children")
+     * @ManyToOne(targetEntity="App\Entity\Category", inversedBy="children")
      * @JoinColumn(name="parent_id", referencedColumnName="id")
      */
     private $parent;
