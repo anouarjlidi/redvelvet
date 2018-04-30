@@ -62,7 +62,7 @@ div.item div.description p{
     padding: 5px;
     padding-bottom: 0;
     font-size: 1em;
-    text-align: justify;
+    text-align: center;
     font-family: 'Arapey';
     line-height: 1.3em;
     overflow: hidden;
@@ -70,7 +70,7 @@ div.item div.description p{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
-    height: 5.5em;
+    height: 5.6em;
 
 }
 

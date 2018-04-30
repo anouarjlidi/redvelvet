@@ -19,14 +19,15 @@ class Cart
     public function __construct()
     {
         $this->session = new Session();
-        $this->products = [];
     }
 
     public function addProductToCart($productId)
     {
-        if($this->session->get('products'))
+        $this->products = $this->session->get('products');
+
+        if(!$this->products)
         {
-            $this->products = $this->session->get('products');
+            $this->products = [];
         }
 
         array_push($this->products, $productId);
@@ -36,6 +37,12 @@ class Cart
     public function deleteProductFromCart($product)
     {
         $this->products = $this->session->get('products');
+
+        if(!$this->products)
+        {
+            $this->products = [];
+        }
+
         $index = array_search($product, $this->products);
         if($index !== false)
         {
@@ -47,6 +54,12 @@ class Cart
     public function getProducts(ProductRepository $productRepository)
     {
         $this->products = $this->session->get('products');
+
+        if(!$this->products)
+        {
+            $this->products = [];
+        }
+
         $products = [];
         foreach ($this->products as $productId)
         {

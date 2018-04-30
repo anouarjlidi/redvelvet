@@ -23,9 +23,10 @@ class CartController extends Controller
      * @Route("/cart", name="cart")
      * @Method({"GET"})
      */
-    public function indexAction()
+    public function indexAction(Cart $cart)
     {
-        $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
+        $productRepository = $this->getDoctrine()->getRepository(Product::class);
+        $products = $cart->getProducts($productRepository);
 
         return $this->render('public/cart/index.html.twig', array(
             'products' => $products

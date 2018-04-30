@@ -41,16 +41,5 @@ class Api_CartController extends Controller
         return $this->json('Product successfully deleted from cart', 200);
     }
 
-    /**
-     * @Route("/api/cart", name="get cart products")
-     * @Method({"GET"})
-     */
-    public function indexAction(Request $request, Cart $cart)
-    {
-        $productsRepository = $this->getDoctrine()->getRepository(Product::class);
-        $products = $cart->getProducts($productsRepository);
-        return $this->json($products, 200);
-    }
-
 
 }

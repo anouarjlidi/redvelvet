@@ -2,19 +2,83 @@
 
     <div id="products-container">
 
+        {% for product in products %}
 
-    </div>
+            <div class="cart-item">
 
-    <div class="total">
+                <div class="delete">
 
-        <span>124.00 €</span>
-        <label>Suma : </label>
+                    <i onclick="deleteProduct({{ product.id }})" class="material-icons">clear</i>
 
-    </div>
+                </div>
 
-    <div class="button-row">
+                <div class="photo">
 
-        <a href="">Mokėti</a>
+                    <img src="{{ product.photo }}">
+
+                </div>
+
+                <div class="description">
+
+                    <div class="title">
+
+                        <h3>{{ product.title }}</h3>
+                        <label class="price"><span>{{ product.price }}</span> <sup>€/vnt.</sup></label>
+
+                    </div>
+
+                    <p>{{ product.description }}</p>
+
+                    <div class="footer">
+
+                        <div class="quantity-container">
+
+                            <label>Kiekis : </label>
+                            <input type="number" value="100" class="quantity">
+
+                        </div>
+
+                        <div class="sum-container">
+
+                            <label>Suma : </label>
+                            <strong><span class="sum"></span> €</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+        {% if products | length == 0 %}
+
+            <div class="no-data">
+
+                <p>Krepšelis tuščias</p>
+                <a class="button" href="/categories">Asortimentas</a>
+
+            </div>
+
+        {% else %}
+
+            <div class="total">
+
+                <p><span id="sum"></span> €</p>
+                <label>Suma : </label>
+
+            </div>
+
+            <div class="button-row">
+
+                <a href="">Mokėti</a>
+
+            </div>
+
+        {% endif %}
+
 
     </div>
 

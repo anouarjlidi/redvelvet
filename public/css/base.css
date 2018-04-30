@@ -98,3 +98,38 @@ input:focus {
 a{
     text-decoration: none;
 }
+
+.no-data{
+    width: 100%;
+    height: 35px;
+    text-align: center;
+}
+
+.no-data p{
+    margin: 0;
+    display: inline-block;
+    line-height: 35px;
+    font-family: 'Arapey';
+    font-size: 1em;
+    margin-right: 25px;
+}
+
+.no-data a{
+    display: inline-block;
+    width: 150px;
+    height: 35px;
+    background-color: #ff6d84;
+    color: white;
+    text-decoration: none;
+    line-height: 35px;
+    font-family: 'Arapey';
+    border-radius: 5px;
+    border: 1px solid #ff6d84;
+}
+
+.no-data a:hover{
+    background-color: white;
+    border:1px solid #ff6d84;
+    color:#ff6d84;
+    font-weight: bold;
+}
