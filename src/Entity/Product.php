@@ -41,6 +41,11 @@ class Product
     private $price;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    private $units;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $description;
@@ -108,6 +113,16 @@ class Product
     public function setPhoto($photo)
     {
         $this->photo = $photo;
+    }
+
+    public function getUnits()
+    {
+        return $this->units;
+    }
+
+    public function setUnits($units)
+    {
+        $this->units = $units;
     }
 
 

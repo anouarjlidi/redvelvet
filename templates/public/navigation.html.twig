@@ -1,33 +1,50 @@
 <header>
 
-    <nav>
+    <div>
+
+        <a id="logo" href="/">
+
+            <img alt="logo" src="{{ asset('img/logo.jpg') }}">
+
+        </a>
+
+    </div>
+
+    <nav class="desktop-nav">
 
         <div class="inner-content">
 
-            <div>
+            <div class="menu-item"><a href="/"><i class="material-icons">home</i> Pagrindinis puslapis</a></div>
+            <div class="menu-item"><a href="/courses/1"><i class="material-icons">school</i> Mokymai</a></div>
+            <div class="menu-item"><a href="/categories"><i class="material-icons">cake</i> Produktai</a></div>
+            <div class="menu-item"><a href="/galleries/1"><i class="material-icons">photo_library</i> Galerija</a></div>
+            <div class="menu-item"><a href="/contact"><i class="material-icons">mail</i> Kontaktai</a></div>
+            <div class="menu-item"><a href="/cart"><i class="material-icons">shopping_cart</i> Krepšelis (0)</a></div>
+            <div class="menu-item"> <a href="/contact"><img src="{{ asset('img/instagram.svg') }}"></a>
+                <a href="/contact"><img src="{{ asset('img/facebook.svg') }}"></a></div>
 
-                <a id="logo" href="/">
+        </div>
 
-                    <img alt="logo" src="{{ asset('img/logo.jpg') }}">
+    </nav>
 
-                </a>
+    <div class="mobile-menu-icon">
 
-            </div>
+        <i class="material-icons">menu</i>
 
-            <div>
+    </div>
 
-                <div class="menu-item"><a href="/"><i class="material-icons">home</i> Pagrindinis puslapis</a></div>
-                <div class="menu-item"><a href="/courses/1"><i class="material-icons">school</i> Mokymai</a></div>
-                <div class="menu-item"><a href="/categories"><i class="material-icons">cake</i> Produktai</a></div>
-                <div class="menu-item"><a href="/galleries/1"><i class="material-icons">photo_library</i> Galerija</a></div>
-                <div class="menu-item"><a href="/contact"><i class="material-icons">mail</i> Kontaktai</a></div>
-                <div class="menu-item"><a href="/cart"><i class="material-icons">shopping_cart</i> Krepšelis (0)</a></div>
-                <div class="menu-item"> <a href="/contact"><img src="{{ asset('img/instagram.svg') }}"></a>
-                    <a href="/contact"><img src="{{ asset('img/facebook.svg') }}"></a></div>
+    <nav class="mobile-nav">
 
+        <div class="mobile-menu-content">
 
-
-            </div>
+            <div class="mobile-menu-item"><a href="/"><i class="material-icons">home</i> Pagrindinis puslapis</a></div>
+            <div class="mobile-menu-item"><a href="/courses/1"><i class="material-icons">school</i> Mokymai</a></div>
+            <div class="mobile-menu-item"><a href="/categories"><i class="material-icons">cake</i> Produktai</a></div>
+            <div class="mobile-menu-item"><a href="/galleries/1"><i class="material-icons">photo_library</i> Galerija</a></div>
+            <div class="mobile-menu-item"><a href="/contact"><i class="material-icons">mail</i> Kontaktai</a></div>
+            <div class="mobile-menu-item"><a href="/cart"><i class="material-icons">shopping_cart</i> Krepšelis (0)</a></div>
+            <div class="mobile-menu-item"> <a href="/contact"><img src="{{ asset('img/instagram.svg') }}"></a>
+                <a href="/contact"><img src="{{ asset('img/facebook.svg') }}"></a></div>
 
         </div>
 

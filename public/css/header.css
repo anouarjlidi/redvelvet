@@ -10,23 +10,23 @@ header{
     overflow: visible;
     position: relative;
     background-color: #f3f0e9;
-}
-
-header > div.inner-content{
-    max-width: 1100px;
-    width: 100%;
-    display: inline-block;
-    height: 40px;
-    border-bottom: 1px solid #e6e6e6;
+    padding-top: 10px;
 }
 
 header > div:first-of-type{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background-image: url("../img/1.jpg");
-    background-size: auto 100%;
-    background-repeat: no-repeat;
+    width: 100%;
+    margin-bottom: 10px;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+header #logo{
+    display: inline-block;
+    height: 100px;
+    position: relative;
+}
+header #logo img{
+    height: 100px;
+    width: auto;
 }

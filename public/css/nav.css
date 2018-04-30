@@ -1,44 +1,17 @@
-nav{
+nav.desktop-nav{
     width: 100%;
     height: auto;
     text-align: center;
 }
 
-nav > div.inner-content{
+nav.desktop-nav > div.inner-content{
     max-width: 1100px;
     width: 100%;
-    height: 100%;
-    display: inline-block;
-}
-
-nav > div.inner-content > div:first-of-type{
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
     height: auto;
-    overflow: hidden;
-    text-align: center;
-}
-
-nav #logo{
     display: inline-block;
-    height: 100px;
-    position: relative;
-}
-nav #logo img{
-    height: 100px;
-    width: auto;
 }
 
-nav > div.inner-content > div:last-of-type{
-    width: 100%;
-    height: 45px;
-    text-align: center;
-}
-
-
-
-nav > div.inner-content > div:last-of-type > div.menu-item{
+nav.desktop-nav > div.inner-content > div.menu-item{
     display: inline-block;
     height: 45px;
     width: auto;
@@ -48,7 +21,7 @@ nav > div.inner-content > div:last-of-type > div.menu-item{
     vertical-align: top;
 }
 
-nav > div.inner-content > div:last-of-type > div.menu-item img{
+nav.desktop-nav > div.inner-content > div.menu-item img{
     width: 15px;
     height: 15px;
     float: right;
@@ -58,7 +31,7 @@ nav > div.inner-content > div:last-of-type > div.menu-item img{
 }
 
 
-nav > div.inner-content > div:last-of-type > div.menu-item a{
+nav.desktop-nav > div.inner-content > div.menu-item a{
     line-height: 45px;
     text-transform: uppercase;
     text-decoration: none;
@@ -69,20 +42,112 @@ nav > div.inner-content > div:last-of-type > div.menu-item a{
     color:#80796f;
 }
 
-nav > div.inner-content > div:last-of-type > div.menu-item img{
+nav.desktop-nav > div.inner-content > div.menu-item img{
     width: 20px;
     height: 20px;
     margin-top: 12.5px;
     display: inline-block;
 }
 
-nav > div.inner-content > div:last-of-type > div.menu-item:last-of-type{
+nav.desktop-nav > div.inner-content > div.menu-item:last-of-type{
     margin-left: 75px;
 }
 
-nav div.menu-item i{
+nav.desktop-nav div.menu-item i{
     vertical-align: sub;
     font-size: 18px;
     color:#ff6d84;
     margin-right: 5px;
+}
+
+nav.mobile-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f3f0e9;
+    z-index: 100;
+    display: none;
+}
+
+nav.mobile-nav > div.mobile-menu-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+}
+
+nav.mobile-nav .mobile-menu-item{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 15px;
+
+}
+
+nav.mobile-nav .mobile-menu-item img{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 12.5px;
+    display: inline-block;
+}
+
+nav.mobile-nav .mobile-menu-item a{
+    line-height: 45px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1em;
+    font-family: 'Arapey';
+    color:#80796f;
+}
+
+nav.mobile-nav .mobile-menu-item i{
+    vertical-align: sub;
+    font-size: 20px;
+    color:#ff6d84;
+    margin-right: 5px;
+}
+
+.mobile-menu-icon{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 101;
+    display: none;
+}
+
+.mobile-menu-icon i{
+    font-size: 55px;
+    color:#ff6d84;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    nav.desktop-nav > div.inner-content > div.menu-item:last-of-type{
+        margin-left: 12px;
+    }
+
+}
+
+@media only screen and (max-width: 525px) {
+
+    .mobile-menu-icon{
+        display: block;
+    }
+
+    nav.desktop-nav{
+        display: none;
+    }
+
 }
