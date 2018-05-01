@@ -81,12 +81,14 @@ div.notification > div.notification-content > div:last-of-type{
     text-align: center;
     padding-right: 5px;
     padding-left: 15px;
+    display: table;
+    height: 100%;
 }
 
 div.notification > div.notification-content > div:last-of-type p{
     color:black;
-    font-family: OpenSans;
+    font-family: 'Arapey';
     display: table-cell;
     font-size: 0.9em;
-   line-height: 70px;
+    vertical-align: middle;
 }

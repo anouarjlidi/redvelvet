@@ -4,6 +4,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/deep-navigation.css') }}">
 
 {% endblock %}
 
@@ -12,6 +13,8 @@
     <main>
 
         <section id="product">
+
+            {% include 'public/product/sections/deep-navigation.html.twig' %}
 
             <h2>Produktas</h2>
 
@@ -33,7 +36,9 @@
 
                 <div class="price">
 
-                    <label>{{ product.price }} <sup>€/kg.</sup></label>
+
+
+                    <label>{{ (product.price / 100) | round(0, 'floor')}}.{{ "%02d" | format((product.price % 100))}} <sup> €/{{ product.units }}.</sup></label>
 
                 </div>
 

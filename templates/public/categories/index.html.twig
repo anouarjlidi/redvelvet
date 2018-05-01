@@ -4,6 +4,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/item.css') }}">
     <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/deep-navigation.css') }}">
 
 {% endblock %}
 
@@ -12,6 +13,8 @@
     <main>
 
         <section id="categories">
+
+            {% include 'public/categories/sections/deep-navigation.html.twig' %}
 
             {% if parent is defined %}
 

@@ -2,7 +2,7 @@ var notificationId = null;
 
 function closeNotification(){
     $('.notification').removeClass('show-notification');
-    notificationId = null;
+    clearTimeout(notificationId);
 }
 
 function showNotification(headerText, contentText){

@@ -1,0 +1,44 @@
+<nav id="deep-navigation">
+
+    {% if product.category.parent.parent is defined and product.category.parent.parent %}
+
+        <div class="deep-menu-item">
+
+            <a href="/categories/{{ product.category.parent.parent.id }}">{{ product.category.parent.parent.title }}</a>
+
+        </div>
+
+    {% else %}
+
+        <div class="deep-menu-item">
+
+            <a href="/categories">Produktų kategorijos</a>
+
+        </div>
+
+    {% endif %}
+
+    {% if product.category.parent is defined and product.category.parent %}
+
+        <div class="deep-menu-item">
+
+            <a href="/categories/{{ product.category.parent.id }}">{{ product.category.parent.title }}</a>
+
+        </div>
+
+    {% endif %}
+
+
+    <div class="deep-menu-item">
+
+         <a href="/products/{{ product.category.id }}/1">{{ product.category.title }}</a>
+
+    </div>
+
+    <div class="deep-menu-item">
+
+        <a href="/product/{{ product.id }}/1">{{ product.title }}</a>
+
+    </div>
+
+</nav>

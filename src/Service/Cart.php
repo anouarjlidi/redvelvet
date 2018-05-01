@@ -8,20 +8,24 @@
 
 namespace App\Service;
 
+use App\Entity\Product;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 class Cart
 {
     private $session;
     private $products;
+    private $productRepository;
 
-    public function __construct()
+    public function __construct(EntityManagerInterface $entityManager)
     {
+        $this->productRepository = $entityManager->getRepository(Product::class);
         $this->session = new Session();
     }
 
-    public function addProductToCart($productId)
+    public function add($productId)
     {
         $this->products = $this->session->get('products');
 
@@ -34,7 +38,7 @@ class Cart
         $this->session->set('products', $this->products);
     }
 
-    public function deleteProductFromCart($product)
+    public function delete($product)
     {
         $this->products = $this->session->get('products');
 
@@ -51,7 +55,7 @@ class Cart
         $this->session->set('products', $this->products);
     }
 
-    public function getProducts(ProductRepository $productRepository)
+    public function get()
     {
         $this->products = $this->session->get('products');
 
@@ -63,7 +67,7 @@ class Cart
         $products = [];
         foreach ($this->products as $productId)
         {
-            array_push($products, $productRepository->find($productId));
+            array_push($products, $this->productRepository->find($productId));
         }
         return $products;
     }

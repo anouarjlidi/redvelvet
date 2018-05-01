@@ -20,8 +20,8 @@
                 <p>{{ product.description }}</p>
                 <div class="price">
 
-                    <label>{{ product.price }} <sup>€/kg.</sup></label>
-                    <button class="button" onclick="addProduct({{ product.id }})">Pridėti į krepšelį</button>
+                    <label>{{ (product.price / 100) | round(0, 'floor')}}.{{ "%02d" | format((product.price % 100))}} <sup>€/{{ product.units }}.</sup></label>
+                    <button class="button" onclick="addProduct({{ product.id }})">Į krepšelį</button>
 
                 </div>
 

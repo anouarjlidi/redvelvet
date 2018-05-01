@@ -27,8 +27,8 @@ class Api_CartController extends Controller
      */
     public function addAction(Request $request, Cart $cart)
     {
-        $cart->addProductToCart($request->request->get('productId'));
-        return $this->json('Product successfully added to cart', 200);
+        $cart->add($request->request->get('productId'));
+        return $this->json('Produktas sėkmingai pridėtas į krepšelį', 200);
     }
 
     /**
@@ -37,8 +37,8 @@ class Api_CartController extends Controller
      */
     public function deleteAction(Request $request, Cart $cart)
     {
-        $cart->deleteProductFromCart($request->request->get('productId'));
-        return $this->json('Product successfully deleted from cart', 200);
+        $cart->delete($request->request->get('productId'));
+        return $this->json('Produktas sėkmingai ištrintas iš krepšelio', 200);
     }
 
 
