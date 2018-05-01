@@ -21,7 +21,7 @@
                 <div class="price">
 
                     <label>{{ (product.price / 100) | round(0, 'floor')}}.{{ "%02d" | format((product.price % 100))}} <sup>€/{{ product.units }}.</sup></label>
-                    <button class="button" onclick="addProduct({{ product.id }})">Į krepšelį</button>
+                    <button class="button" onclick="openModal({{ product.id }})">Į krepšelį</button>
 
                 </div>
 

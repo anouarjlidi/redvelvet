@@ -4,7 +4,7 @@ $(document).ready(function()
     {
         $('.animated-element').waypoint(function()
             {
-                if($(this).hasClass('showfrombottom') == true)
+                if($(this).hasClass('showfrombottom') === true)
                 {
                     return;
                 }

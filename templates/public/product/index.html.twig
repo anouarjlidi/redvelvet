@@ -5,56 +5,20 @@
     <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/deep-navigation.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
 
 {% endblock %}
 
 {% block content %}
 
-    <main>
+    {% include 'public/product/sections/product.html.twig' %}
+    {% include 'public/modals/add-to-cart.html.twig' %}
+    <div class="modal-background"></div>
 
-        <section id="product">
+{% endblock %}
 
-            {% include 'public/product/sections/deep-navigation.html.twig' %}
+{% block javascripts %}
 
-            <h2>Produktas</h2>
-
-            <div id="photos">
-
-                <div class="main-photo">
-
-                    <img src="{{ asset(product.photo) }}">
-
-                </div>
-
-            </div>
-
-            <div id="description">
-
-                <h3>{{ product.title }}</h3>
-
-                <p>{{ product.description }}</p>
-
-                <div class="price">
-
-
-
-                    <label>{{ (product.price / 100) | round(0, 'floor')}}.{{ "%02d" | format((product.price % 100))}} <sup> €/{{ product.units }}.</sup></label>
-
-                </div>
-
-                <div class="quantity">
-
-                    <label>Kiekis : </label>
-                    <input type="number">
-
-                </div>
-
-                <button>Pridėti į krepšelį</button>
-
-            </div>
-
-        </section>
-
-    </main>
+    <script type="application/javascript" src="{{ asset("js/product-modal.js") }}"></script>
 
 {% endblock %}

@@ -10,15 +10,6 @@ div#description{
     padding: 10px 25px;
 }
 
-div#description h3{
-    text-align: left;
-    color:#ff6d84;
-    font-size: 1.8em;
-    font-family: sail;
-    margin: 0;
-    margin-bottom: 50px;
-}
-
 div#description p{
     text-align: justify;
     margin: 0;
@@ -54,6 +45,7 @@ div#description .price label{
 div#description button{
     width: 100%;
     height: 37.5px;
+    margin-bottom: 65px;
     border-radius: 5px;
     border:1px solid #606060;
     color: #606060;
@@ -65,27 +57,53 @@ div#description button{
 
 div#description .quantity{
     width: 100%;
-    height: 40px;
+    height: 30px;
     margin-bottom: 25px;
     text-align: center;
 }
 
 div#description .quantity label{
-    float: left;
     font-weight: bold;
-    line-height: 40px;
+    line-height: 30px;
     color: #606060;
     font-family: 'Arapey';
     font-size: 1.1em;
 }
 
+div#description .quantity label:first-of-type{
+    float: left;
+}
+
+div#description .quantity label:last-of-type{
+    float: right;
+}
+
 div#description .quantity input{
     float: right;
     height: 100%;
-    width: 150px;
-    border-radius: 5px;
-    border: 1px solid #a9a9a9;
+    width: 75px;
+    text-align: center;
+    border: none;
+    margin-right: 10px;
+    border-bottom: 1px solid #a9a9a9;
     padding-left: 5px;
+}
+
+div#description .sum{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+
+div#description .sum label{
+    float: right;
+    font-family: sail;
+    line-height: 35px;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    color:#ff6d84;
+    margin-right: 10px;
 }
 
 div#photos{

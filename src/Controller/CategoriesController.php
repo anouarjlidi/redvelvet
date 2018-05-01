@@ -11,6 +11,7 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Entity\Gallery;
 use App\Entity\Product;
+use App\Service\PathFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -29,11 +30,12 @@ class CategoriesController extends Controller
      * @Route("/categories/{parent}", name="categories")
      * @Method({"GET"})
      */
-    public function indexAction($parent = null)
+    public function indexAction($parent = null, PathFinder $pathFinder)
     {
         if($parent)
         {
             $parent = $this->getDoctrine()->getRepository(Category::class)->find($parent);
+            $data['path'] = $pathFinder->getFullPath($parent);
             $data['parent'] = $parent;
             $data['categories'] = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => $parent]);
         }

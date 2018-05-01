@@ -10,6 +10,7 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Entity\Product;
+use App\Service\PathFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -29,10 +30,10 @@ class ProductsController extends Controller
      * @Route("/products/{category}/{page}", name="products")
      * @Method({"GET"})
      */
-    public function indexAction($page, $category)
+    public function indexAction($page, $category, PathFinder $pathFinder)
     {
         $category = $this->getDoctrine()->getRepository(Category::class)->find($category);
-
+        $path = $pathFinder->getFullPath($category);
         $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['category' => $category], [], $this->limit, ($page-1)*$this->limit);
         $pagesCount = ceil($this->getDoctrine()->getRepository(Product::class)->count(['category' => $category])/$this->limit);
 
@@ -40,6 +41,7 @@ class ProductsController extends Controller
             'products' => $products,
             'category' => $category,
             'page' => $page,
+            'path' => $path,
             'pagesCount' => $pagesCount
         ));
     }

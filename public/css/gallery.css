@@ -37,3 +37,31 @@
     font-family: sail;
     font-weight: bold;
 }
+
+#gallery .button-row{
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+#gallery .button-row a{
+    display: inline-block;
+    width: 150px;
+    height: 35px;
+    background-color: #ff6d84;
+    color: white;
+    text-decoration: none;
+    line-height: 35px;
+    font-family: 'Arapey';
+    border-radius: 5px;
+    border: 1px solid #ff6d84;
+}
+
+#gallery .button-row a:hover{
+    background-color: white;
+    border:1px solid #ff6d84;
+    color:#ff6d84;
+    font-weight: bold;
+}
+

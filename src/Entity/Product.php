@@ -55,6 +55,8 @@ class Product
      */
     private $photo;
 
+    private $quantity;
+
     public function getId()
     {
         return $this->id;
@@ -123,6 +125,16 @@ class Product
     public function setUnits($units)
     {
         $this->units = $units;
+    }
+
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    public function setQuantity($quantity)
+    {
+        $this->quantity = $quantity;
     }
 
 

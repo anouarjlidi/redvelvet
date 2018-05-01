@@ -25,7 +25,7 @@ class Cart
         $this->session = new Session();
     }
 
-    public function add($productId)
+    public function add($productId, $quantity)
     {
         $this->products = $this->session->get('products');
 
@@ -34,24 +34,32 @@ class Cart
             $this->products = [];
         }
 
-        array_push($this->products, $productId);
+        $product['quantity'] = $quantity;
+        $product['id'] = $productId;
+
+        array_push($this->products, $product);
         $this->session->set('products', $this->products);
     }
 
-    public function delete($product)
+    public function delete($productId)
     {
         $this->products = $this->session->get('products');
 
         if(!$this->products)
         {
-            $this->products = [];
+            return;
         }
 
-        $index = array_search($product, $this->products);
-        if($index !== false)
+
+        foreach($this->products as $key=>$element)
         {
-            unset($this->products[$index]);
+            if ($element['id'] == $productId)
+            {
+                unset($this->products[$key]);
+                break;
+            }
         }
+
         $this->session->set('products', $this->products);
     }
 
@@ -65,9 +73,11 @@ class Cart
         }
 
         $products = [];
-        foreach ($this->products as $productId)
+        foreach ($this->products as $productTemp)
         {
-            array_push($products, $this->productRepository->find($productId));
+            $product = $this->productRepository->find($productTemp['id']);
+            $product->setQuantity($productTemp['quantity']);
+            array_push($products, $product);
         }
         return $products;
     }

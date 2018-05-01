@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
     <link rel="stylesheet" href="{{ asset('css/deep-navigation.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
 
 {% endblock %}
 
@@ -15,15 +16,24 @@
 
         <section id="products">
 
-            {% include 'public/products/sections/deep-navigation.html.twig' %}
+            {% include 'public/deep-navigation.html.twig' %}
 
             <h2>{{ category.title }}</h2>
 
             {% include 'public/products/sections/products.html.twig' %}
             {% include 'public/products/sections/pagination.html.twig' %}
 
+            {% include 'public/modals/add-to-cart.html.twig' %}
+            <div class="modal-background"></div>
+
         </section>
 
     </main>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script type="application/javascript" src="{{ asset("js/product-modal.js") }}"></script>
 
 {% endblock %}

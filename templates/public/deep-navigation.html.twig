@@ -1,0 +1,46 @@
+<nav id="deep-navigation">
+
+    <div class="deep-menu-item">
+
+        <a href="/categories">Visos kategorijos</a>
+
+    </div>
+
+    {% if path is defined %}
+
+        {% for category in path %}
+
+            {% if category.children | length > 0 %}
+
+                <div class="deep-menu-item">
+
+                    <a href="/categories/{{ category.id }}">{{ category.title }}</a>
+
+                </div>
+
+            {% else %}
+
+                <div class="deep-menu-item">
+
+                    <a href="/products/{{ category.id }}/1">{{ category.title }}</a>
+
+                </div>
+
+            {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+
+    {% if product is defined %}
+
+        <div class="deep-menu-item">
+
+            <a href="/product/{{ product.id }}">{{ product.title }}</a>
+
+        </div>
+
+
+    {% endif %}
+
+</nav>

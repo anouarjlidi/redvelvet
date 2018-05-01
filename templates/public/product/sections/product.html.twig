@@ -1,0 +1,35 @@
+<main>
+
+    <section id="product">
+
+        {% include 'public/deep-navigation.html.twig' %}
+
+        <h2>{{ product.title }}</h2>
+
+        <div id="photos">
+
+            <div class="main-photo">
+
+                <img src="{{ asset(product.photo) }}">
+
+            </div>
+
+        </div>
+
+        <div id="description">
+
+            <p>{{ product.description }}</p>
+
+            <div class="price">
+
+                <label><span>{{ (product.price / 100) | number_format(2) }}</span> <sup> €/{{ product.units }}.</sup></label>
+
+            </div>
+
+            <button onclick="openModal({{ product.id }})">Pridėti į krepšelį</button>
+
+        </div>
+
+    </section>
+
+</main>
