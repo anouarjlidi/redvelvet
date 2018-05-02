@@ -124,3 +124,19 @@ div#photos .main-photo img{
     height: auto;
     border-radius: 5px;
 }
+
+@media only screen and (max-width: 450px) {
+
+    div#photos{
+        width: 100%;
+        float: none;
+    }
+
+    div#description{
+        padding: 0;
+        width: 100%;
+        margin-left: 0;
+        float: none;
+    }
+
+}

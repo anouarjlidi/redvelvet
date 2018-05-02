@@ -82,7 +82,6 @@ footer div.contacts > div strong{
     margin: 0;
     display: block;
     font-size: 1.1em;
-    border-bottom: 2px solid white;
     color:white;
     line-height: 35px;
     text-align: center;
@@ -96,9 +95,14 @@ footer div.contacts > div span{
 }
 
 @media only screen and (max-width: 800px) {
+
+    footer > div.inner-content{
+        padding: 0 25px;
+    }
+
     section#map {
-        left: -50px;
-        width: calc(100% + 100px);
-        right: -50px;
+        left: -25px;
+        width: calc(100% + 50px);
+        right: -25px;
     }
 }

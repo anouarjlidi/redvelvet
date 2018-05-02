@@ -210,3 +210,15 @@
     z-index: 998 !important;
     transition-delay: 0s !important;
 }
+
+@media only screen and (max-width: 510px) {
+
+    .modal{
+        width: calc(100% - 20px);
+    }
+
+    .modal .content{
+        padding: 15px;
+    }
+
+}

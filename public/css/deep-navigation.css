@@ -14,7 +14,7 @@ nav#deep-navigation .deep-menu-item a{
 }
 
 .deep-menu-item {
-    max-width: 300px;
+    margin-bottom: 15px;
     text-align: center;
     display: inline-block;
     margin-right: 25px;
@@ -47,4 +47,9 @@ nav#deep-navigation .deep-menu-item a{
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
 }
-        
+
+@media only screen and (max-width: 450px){
+    .deep-menu-item{
+        display: block;
+    }
+}
