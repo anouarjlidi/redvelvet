@@ -102,6 +102,7 @@ nav.mobile-nav .mobile-menu-item img{
 
 nav.mobile-nav .mobile-menu-item a{
     line-height: 45px;
+    white-space: nowrap;
     text-transform: uppercase;
     text-decoration: none;
     margin: 0;

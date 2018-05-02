@@ -142,4 +142,11 @@ a{
         padding: 0 25px;
     }
 
+    .no-data p{
+        text-align: center;
+        margin-right: 0;
+        display: block;
+    }
+
+
 }

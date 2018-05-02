@@ -239,8 +239,8 @@ section#cart .button-row a:hover{
 
     .cart .cart-item .delete{
         width: 35px;
-        height: 40px;
-        right: 5px;
+        height: 35px;
+        right: 10px;
     }
 
     .cart .cart-item .delete i{

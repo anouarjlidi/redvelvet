@@ -13,6 +13,7 @@ div.item div img{
     height: 100%;
     object-fit: cover;
     cursor: pointer;
+    display: block;
     -webkit-transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Safari */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
@@ -121,7 +122,7 @@ div.item div.description .price label sup{
     font-size: 0.6em;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 525px) {
 
     div.item{
         margin: 10px 0;
@@ -131,6 +132,12 @@ div.item div.description .price label sup{
 
     div.item div.description p{
         text-align: justify;
+        text-overflow: inherit;
+        display: block;
+        -webkit-box-orient: unset;
+        -webkit-line-clamp: none;
+        height: auto;
+        margin-bottom: 10px;
     }
 
     div.item div.photo{

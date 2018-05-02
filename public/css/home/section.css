@@ -24,7 +24,7 @@ section.section h2{
     margin-bottom: 75px;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 525px) {
 
     section.section{
         padding: 75px 25px 100px 25px;

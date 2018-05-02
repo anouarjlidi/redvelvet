@@ -37,7 +37,7 @@
 @media only screen and (max-width: 400px) {
 
     .feedback{
-        width: calc(100% - 50px);
+        width: 100%;
         margin:0;
         margin-bottom: 30px;
     }
