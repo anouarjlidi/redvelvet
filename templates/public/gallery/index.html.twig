@@ -3,6 +3,7 @@
 {% block pageStylesheets %}
 
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <link rel="stylesheet" href="{{ asset('css/page-base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
 
@@ -21,5 +22,14 @@
         </section>
 
     </main>
+
+    {% include 'public/modals/photo-modal.html.twig' %}
+    <div class="modal-background"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script type="application/javascript" src="{{ asset("js/gallery-slideshow.js") }}"></script>
 
 {% endblock %}
