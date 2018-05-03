@@ -16,13 +16,13 @@
 
             {% include 'public/deep-navigation.html.twig' %}
 
-            {% if parent is defined %}
+            {% if parent == null %}
 
-                <h2>{{ parent.title }}</h2>
+                <h2>Produktų kategorijos</h2>
 
             {% else %}
 
-                <h2>Produktų kategorijos</h2>
+                <h2>{{ parent.title }}</h2>
 
             {% endif %}
 

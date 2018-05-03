@@ -34,7 +34,8 @@ class CategoriesController extends Controller
     {
         if($parent == 0)
         {
-            $categories = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null]);
+            $data['categories'] = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null]);
+            $data['parent'] = null;
         }
         else
         {
@@ -46,15 +47,13 @@ class CategoriesController extends Controller
                 return $this->redirectToRoute('home');
             }
 
-            $path = $pathFinder->getFullPath($parent);
-            $categories = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => $parent]);
+            $data['parent'] = $parent;
+            $data['path'] = $pathFinder->getFullPath($parent);
+            $data['categories'] = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => $parent]);
         }
 
-        return $this->render('public/categories/index.html.twig', [
-            'parent' => $parent,
-            'path' => $path,
-            'categories' => $categories,
-            'navCategories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
-        ]);
+        $data['navCategories'] = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null]);
+
+        return $this->render('public/categories/index.html.twig', $data);
     }
 }
