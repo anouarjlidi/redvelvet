@@ -62,7 +62,6 @@ div.item div.description p{
     margin: 0;
     padding: 5px;
     padding-bottom: 0;
-    font-size: 1em;
     text-align: center;
     font-family: 'Alegreya';
     line-height: 1.3em;
@@ -72,6 +71,7 @@ div.item div.description p{
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     height: 5.6em;
+    font-size: 0.9em;
     margin-bottom: 5px;
 
 }
