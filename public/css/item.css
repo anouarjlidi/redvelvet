@@ -71,7 +71,7 @@ div.item div.description p{
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     height: 5.6em;
-    font-size: 0.9em;
+    font-size: 1em;
     margin-bottom: 5px;
 
 }
