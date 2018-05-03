@@ -1,4 +1,6 @@
-<div class="modal">
+<div class="modal" id="add-product-to-cart">
+
+    {% include 'public/loader.html.twig' %}
 
     <div class="header">
 
@@ -12,43 +14,23 @@
 
         <div class="row">
 
-            <div class="col">
+            <div class="col">Prekės pavadinimas :</div>
 
-                Prekės pavadinimas :
-
-            </div>
-
-            <div class="col product-name">
-
-
-
-            </div>
+            <div class="col product-name"></div>
 
         </div>
 
         <div class="row">
 
-            <div class="col">
+            <div class="col">Kaina :</div>
 
-                Kaina :
-
-            </div>
-
-            <div class="col product-price">
-
-                <span></span>
-
-            </div>
+            <div class="col product-price"><span></span></div>
 
         </div>
 
         <div class="row">
 
-            <div class="col">
-
-                Kiekis :
-
-            </div>
+            <div class="col">Kiekis :</div>
 
             <div class="col product-quantity">
 
@@ -60,17 +42,9 @@
 
         <div class="row">
 
-            <div class="col sum">
+            <div class="col sum">Suma :</div>
 
-                Suma :
-
-            </div>
-
-            <div id="sum" class="col sum">
-
-
-
-            </div>
+            <div id="sum" class="col sum"></div>
 
         </div>
 
@@ -79,7 +53,7 @@
 
     <div class="footer">
 
-        <button onclick="addProduct()">Pridėti</button>
+        <button disabled onclick="addProduct()">Pridėti</button>
 
     </div>
 

@@ -43,6 +43,7 @@ $(document).ready(function()
 
 function openModal(productId)
 {
+    $('.loader').removeClass('hide-loader');
     $('input#quantity').val('1');
     modalBackground.addClass('show-modal-background');
     modal.addClass('show-modal');
@@ -51,6 +52,9 @@ function openModal(productId)
 
 function closeModal()
 {
+    $('.modal button').attr('disabled', true);
+    $('.modal .content').css('visibility', 'hidden');
+    $('.loader').addClass('hide-loader');
     modal.removeClass('show-modal');
     modalBackground.removeClass('show-modal-background');
 }
@@ -69,7 +73,9 @@ function getProduct(productId) {
             $('.product-name').html(data['title']);
             $('.product-price').html("<span>"+(data['price']/100).toFixed(2)+"</span> €/"+data['units']);
             $('#sum').html((data['price']/100).toFixed(2) + ' €');
-
+            $('.modal .content').css('visibility', 'visible');
+            $('.loader').addClass('hide-loader');
+            $('.modal button').attr('disabled', false);
         }
     });
 

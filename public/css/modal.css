@@ -122,6 +122,10 @@
     font-family: 'Alegreya';
 }
 
+#add-product-to-cart{
+    visibility: hidden;
+}
+
 .modal .content{
     padding: 25px;
 }
