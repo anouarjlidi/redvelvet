@@ -51,6 +51,8 @@ class CategoriesController extends Controller
             $data['categories'] = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null]);
         }
 
+        $data['navCategories'] = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null]);
+
         return $this->render('public/categories/index.html.twig', $data);
     }
 }

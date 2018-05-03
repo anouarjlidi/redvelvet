@@ -29,7 +29,8 @@ class HomeController extends Controller{
         $feedbacks = $this->getDoctrine()->getRepository(Feedback::class)->findBy([], [], 3, 0);
 
         return $this->render('public/home/index.html.twig', array(
-            'categories' => $categories,
+            'categories' => $mainCategories,
+            'navCategories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null]),
             'feedbacks' => $feedbacks,
             'courses' => $courses
         ));

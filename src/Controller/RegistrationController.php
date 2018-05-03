@@ -9,6 +9,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Course;
 use App\Entity\Product;
 use App\Entity\Registration;
@@ -46,7 +47,8 @@ class RegistrationController extends Controller
 
         return $this->render('public/registration/index.html.twig', array(
             'course' => $course,
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'navCategories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
         ));
     }
 }

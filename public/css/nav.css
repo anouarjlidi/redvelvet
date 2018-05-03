@@ -21,6 +21,48 @@ nav.desktop-nav > div.inner-content > div.menu-item{
     vertical-align: top;
 }
 
+.dropdown-content .dropdown-menu-item{
+    width: 100%;
+    display: block;
+    height: 30px;
+}
+
+.dropdown-content .dropdown-menu-item a{
+    line-height: 30px;
+    font-size: 1em;
+    white-space: nowrap;
+    font-family: 'Alegreya';
+    color:#80796f;
+}
+
+.dropdown-content{
+    visibility: hidden;
+    width: calc(100% + 40px);
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    left: -20px;
+    padding: 5px;
+    top: 45px;
+    background-color: white;
+    webkit-box-shadow: 0 0 4px #bdbdbd;
+    -moz-box-shadow: 0 0 4px #bdbdbd;
+    box-shadow: 0 0 4px #bdbdbd;
+    opacity: 0;
+    transform: translateY(-1.6em);
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.active-dropdown{
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 999 !important;
+    transform: translateY(0%) !important;
+    transition-delay: 0s, 0s, 0.3s !important;
+}
+
 nav.desktop-nav > div.inner-content > div.menu-item img{
     width: 15px;
     height: 15px;
@@ -31,7 +73,7 @@ nav.desktop-nav > div.inner-content > div.menu-item img{
 }
 
 
-nav.desktop-nav > div.inner-content > div.menu-item a{
+nav.desktop-nav > div.inner-content > div.menu-item > a{
     line-height: 45px;
     text-transform: uppercase;
     text-decoration: none;

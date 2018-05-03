@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Gallery;
 use App\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -32,7 +33,8 @@ class GalleryController extends Controller
         }
 
         return $this->render('public/gallery/index.html.twig', array(
-            'gallery' => $gallery
+            'gallery' => $gallery,
+            'navCategories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
         ));
     }
 }

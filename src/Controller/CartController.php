@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Product;
 use App\Repository\ProductRepository;
 use App\Service\Cart;
@@ -26,7 +27,8 @@ class CartController extends Controller
     public function indexAction(Cart $cart)
     {
         return $this->render('public/cart/index.html.twig', array(
-            'products' => $cart->get()
+            'products' => $cart->get(),
+            'navCategories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
         ));
     }
 

@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Course;
 use App\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -36,7 +37,8 @@ class CoursesController extends Controller
         return $this->render('public/courses/index.html.twig', array(
             'courses' => $courses,
             'pagesCount' => $pagesCount,
-            'page' => $page
+            'page' => $page,
+            'navCategories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
         ));
     }
 }

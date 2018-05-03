@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Service\FileUploader;
@@ -61,7 +62,8 @@ class ProductController extends Controller
         }
 
         return $this->render('private/product/add.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'navCategories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
         ));
     }
 

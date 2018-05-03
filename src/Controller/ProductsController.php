@@ -49,7 +49,8 @@ class ProductsController extends Controller
             'category' => $category,
             'page' => $page,
             'path' => $path,
-            'pagesCount' => $pagesCount
+            'pagesCount' => $pagesCount,
+            'navCategories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
         ));
     }
 
