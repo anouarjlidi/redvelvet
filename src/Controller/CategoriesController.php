@@ -27,32 +27,34 @@ class CategoriesController extends Controller
     }
 
     /**
-     * @Route("/categories/{parent}", name="categories")
+     * @Route("/categories/{parent}", name="subcategories")
      * @Method({"GET"})
      */
-    public function indexAction($parent = null, PathFinder $pathFinder)
+    public function indexAction($parent, PathFinder $pathFinder)
     {
-        if($parent)
+        if($parent == 0)
+        {
+            $categories = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null]);
+        }
+        else
         {
             $parent = $this->getDoctrine()->getRepository(Category::class)->find($parent);
 
             if(!$parent)
             {
                 $this->addFlash('error', 'Kategorija nerasta');
-                $this->redirectToRoute('home');
+                return $this->redirectToRoute('home');
             }
 
-            $data['path'] = $pathFinder->getFullPath($parent);
-            $data['parent'] = $parent;
-            $data['categories'] = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => $parent]);
-        }
-        else
-        {
-            $data['categories'] = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null]);
+            $path = $pathFinder->getFullPath($parent);
+            $categories = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => $parent]);
         }
 
-        $data['navCategories'] = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null]);
-
-        return $this->render('public/categories/index.html.twig', $data);
+        return $this->render('public/categories/index.html.twig', [
+            'parent' => $parent,
+            'path' => $path,
+            'categories' => $categories,
+            'navCategories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
+        ]);
     }
 }

@@ -37,7 +37,7 @@ class ProductsController extends Controller
         if(!$category)
         {
             $this->addFlash('error', 'Kategorija nerasta');
-            $this->redirectToRoute('home');
+            return $this->redirectToRoute('home');
         }
 
         $path = $pathFinder->getFullPath($category);

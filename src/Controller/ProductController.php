@@ -32,7 +32,7 @@ class ProductController extends Controller
         if(!$product)
         {
             $this->addFlash('error', 'Produktas nerastas');
-            $this->redirectToRoute('home');
+            return $this->redirectToRoute('home');
         }
 
         $path = $pathFinder->getFullPath($product->getCategory()->getId());

@@ -29,7 +29,7 @@ class CourseController extends Controller
         if(!$course)
         {
             $this->addFlash('error', 'Kursai nerasti');
-            $this->redirectToRoute('home');
+            return $this->redirectToRoute('home');
         }
 
 

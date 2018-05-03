@@ -29,7 +29,7 @@ class GalleryController extends Controller
         if(!$gallery)
         {
             $this->addFlash('error', 'Galerija nerasta');
-            $this->redirectToRoute('home');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('public/gallery/index.html.twig', array(
