@@ -109,7 +109,7 @@ a{
 .no-data p{
     margin: 0;
     display: inline-block;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     font-size: 1em;
     margin-bottom: 35px;
     margin-right: 25px;
@@ -123,7 +123,7 @@ a{
     color: white;
     text-decoration: none;
     line-height: 35px;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     border-radius: 5px;
     margin-bottom: 25px;
     border: 1px solid #ff6d84;

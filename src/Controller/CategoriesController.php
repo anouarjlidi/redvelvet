@@ -35,6 +35,13 @@ class CategoriesController extends Controller
         if($parent)
         {
             $parent = $this->getDoctrine()->getRepository(Category::class)->find($parent);
+
+            if(!$parent)
+            {
+                $this->addFlash('error', 'Kategorija nerasta');
+                $this->redirectToRoute('home');
+            }
+
             $data['path'] = $pathFinder->getFullPath($parent);
             $data['parent'] = $parent;
             $data['categories'] = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => $parent]);

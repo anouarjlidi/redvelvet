@@ -64,7 +64,7 @@ div.item div.description p{
     padding-bottom: 0;
     font-size: 1em;
     text-align: center;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     line-height: 1.3em;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -95,7 +95,7 @@ div.item div.description .price .button{
     border-radius: 5px;
     font-size: 0.9em;
     line-height: 32px;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
 }
 
 div.item div.description .price .button:hover{
@@ -111,7 +111,7 @@ div.item div.description .price label{
     padding-left: 5px;
     display: block;
     color:#ff6d84;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     text-align: left;
     font-size: 1.8em;
     font-weight: bold;

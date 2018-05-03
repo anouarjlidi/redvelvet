@@ -77,7 +77,7 @@
     line-height: 30px;
     color: #ff6d84;
     font-weight: bold;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     font-size: 1.4em;
 }
 
@@ -89,7 +89,7 @@
     font-size: 1em;
     margin-top: 10px;
     color: #606060;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
 }
 
 .cart .cart-item .description .footer{
@@ -106,7 +106,7 @@
 }
 
 .cart .cart-item .description .footer .quantity-container label{
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     color: #B7AE9F;
     height: 35px;
     text-align: center;
@@ -134,7 +134,7 @@
 }
 
 .cart .cart-item .description .footer .sum-container label{
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     color: #B7AE9F;
     height: 35px;
     text-align: center;
@@ -146,7 +146,7 @@
 }
 
 .cart .cart-item .description .footer .sum-container strong{
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     color: #ff6d84;
     height: 35px;
     text-align: center;
@@ -179,7 +179,7 @@ section#cart .total{
 
 section#cart .total label{
     float: right;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     font-size: 1.2em;
     color:#ff6d84;
     line-height: 35px;
@@ -205,7 +205,7 @@ section#cart .button-row a{
     color: white;
     text-decoration: none;
     line-height: 35px;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     border-radius: 5px;
     border: 1px solid #ff6d84;
 }

@@ -37,14 +37,14 @@ footer p:first-of-type{
     color: white;
     margin-bottom: 50px;
     line-height: 1.6em;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
 }
 
 footer p:last-of-type{
     margin: 0;
     color: white;
     line-height: 1.6em;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     text-align: center;
 }
 

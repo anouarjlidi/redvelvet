@@ -25,6 +25,13 @@ class CourseController extends Controller
     {
         $course = $this->getDoctrine()->getRepository(Course::class)->find($id);
 
+        if(!$course)
+        {
+            $this->addFlash('error', 'Kursai nerasti');
+            $this->redirectToRoute('home');
+        }
+
+
         return $this->render('public/course/index.html.twig', array(
             'course' => $course
         ));

@@ -33,6 +33,13 @@ class ProductsController extends Controller
     public function indexAction($page, $category, PathFinder $pathFinder)
     {
         $category = $this->getDoctrine()->getRepository(Category::class)->find($category);
+
+        if(!$category)
+        {
+            $this->addFlash('error', 'Kategorija nerasta');
+            $this->redirectToRoute('home');
+        }
+
         $path = $pathFinder->getFullPath($category);
         $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['category' => $category], [], $this->limit, ($page-1)*$this->limit);
         $pagesCount = ceil($this->getDoctrine()->getRepository(Product::class)->count(['category' => $category])/$this->limit);

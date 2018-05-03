@@ -19,7 +19,7 @@ div#description p{
     font-size: 1em;
     line-height: 1.1em;
     color: #606060;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
 }
 
 div#description .price{
@@ -36,7 +36,7 @@ div#description .price label{
     padding-bottom: 20px;
     line-height: 40px;
     color: #ff6d84;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     font-size: 1.7em;
     font-weight: bold;
     vertical-align: top;
@@ -66,7 +66,7 @@ div#description .quantity label{
     font-weight: bold;
     line-height: 30px;
     color: #606060;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     font-size: 1.1em;
 }
 

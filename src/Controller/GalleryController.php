@@ -25,6 +25,12 @@ class GalleryController extends Controller
     {
         $gallery = $this->getDoctrine()->getRepository(Gallery::class)->find($id);
 
+        if(!$gallery)
+        {
+            $this->addFlash('error', 'Galerija nerasta');
+            $this->redirectToRoute('home');
+        }
+
         return $this->render('public/gallery/index.html.twig', array(
             'gallery' => $gallery
         ));

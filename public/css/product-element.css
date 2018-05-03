@@ -64,7 +64,7 @@ div.product-element div.description p{
     font-size: 1em;
     color:#606060;
     height: 4.8em;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     line-height: 1.2em;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -84,7 +84,7 @@ div.product-element div.description button{
     border-radius: 5px;
     font-size: 0.9em;
     line-height: 32px;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
 }
 
 div.product-element div.description button:hover{
@@ -99,7 +99,7 @@ div.product-element div.description label{
     height: 35px;
     display: block;
     color:#ff6d84;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     text-align: left;
     font-size: 1.7em;
     font-weight: bold;

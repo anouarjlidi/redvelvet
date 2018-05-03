@@ -27,6 +27,12 @@ class RegistrationController extends Controller
     {
         $course = $this->getDoctrine()->getRepository(Course::class)->find($id);
 
+        if(!$course)
+        {
+            $this->addFlash('error', 'Kursai nerasti');
+            $this->redirectToRoute('home');
+        }
+
         $registration = new Registration();
 
         $form = $this->createForm(RegistrationType::class, $registration);

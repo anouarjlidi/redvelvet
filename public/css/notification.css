@@ -39,7 +39,7 @@ div.notification > div.notification-header > p{
     color:white;
     margin: 0;
     float: left;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
 }
 
 div.notification > div.notification-header > i{
@@ -87,7 +87,7 @@ div.notification > div.notification-content > div:last-of-type{
 
 div.notification > div.notification-content > div:last-of-type p{
     color:black;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     display: table-cell;
     font-size: 0.9em;
     vertical-align: middle;

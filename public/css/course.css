@@ -3,7 +3,7 @@
     height: 30px;
     line-height: 30px;
     text-align: right;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     color:#606060;
     font-weight: bold;
     font-size: 1.2em;
@@ -41,7 +41,7 @@
     padding-bottom: 20px;
     line-height: 40px;
     color: #ff6d84;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
     font-size: 1.7em;
     font-weight: bold;
     vertical-align: top;
@@ -73,7 +73,7 @@
     font-size: 1em;
     line-height: 1.1em;
     color: #606060;
-    font-family: 'Arapey';
+    font-family: 'Alegreya';
 }
 
 .content .description a{

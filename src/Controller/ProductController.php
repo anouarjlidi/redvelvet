@@ -28,6 +28,12 @@ class ProductController extends Controller
     {
         $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
 
+        if(!$product)
+        {
+            $this->addFlash('error', 'Produktas nerastas');
+            $this->redirectToRoute('home');
+        }
+
         $path = $pathFinder->getFullPath($product->getCategory()->getId());
 
         return $this->render('public/product/index.html.twig', array(
