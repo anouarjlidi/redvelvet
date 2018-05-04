@@ -43,28 +43,4 @@ class ProductController extends Controller
         ));
     }
 
-    /**
-     * @Route("/admin/product/add", name="add product")
-     */
-    public function addAction(Request $request, FileUploader $fileUploader)
-    {
-        $product = new Product();
-
-        $form = $this->createForm(ProductType::class, $product);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid())
-        {
-            $filename = $fileUploader->upload($product->getPhoto());
-            $product->setPhoto($filename);
-            $this->getDoctrine()->getRepository(Product::class)->add($product);
-
-        }
-
-        return $this->render('private/product/add.html.twig', array(
-            'form' => $form->createView(),
-            'navCategories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
-        ));
-    }
-
 }

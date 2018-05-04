@@ -9,6 +9,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CourseRepository")
@@ -26,29 +27,42 @@ class Course
     private $id;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(type="string")
      */
     private $title;
 
     /**
-     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     * @ORM\Column(type="decimal", precision=7, scale=2)
      */
     private $price;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(type="text")
      */
     private $description;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=false)
+     * @ORM\Version
      */
     private $date;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(type="string")
      */
     private $photo;
+
+    /**
+     * @Assert\NotBlank()
+     * @ORM\Column(type="datetime")
+     */
+    private $eventDate;
+
+
 
     public function getId()
     {
@@ -108,5 +122,15 @@ class Course
     public function setPhoto($photo)
     {
         $this->photo = $photo;
+    }
+
+    public function getEventDate()
+    {
+        return $this->eventDate;
+    }
+
+    public function setEventDate($eventDate)
+    {
+        $this->eventDate = $eventDate;
     }
 }

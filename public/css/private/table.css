@@ -1,0 +1,26 @@
+table{
+    box-shadow: none;
+    font-size: 13px;
+    margin: 0 !important;
+}
+
+thead{
+    font-size: 0.9em;
+}
+
+.table td{
+    vertical-align: middle !important;
+    padding: 0.6em !important;
+    text-align: center;
+}
+
+.table th{
+    text-align: center;
+}
+
+.table td i{
+    font-size: 20px;
+    vertical-align: middle;
+    color:black;
+    cursor: pointer;
+}

@@ -1,0 +1,40 @@
+<tbody>
+
+{% for category in categories %}
+
+    <tr>
+
+        <td>{{ category.id }}</td>
+        <td>{{ category.title }}</td>
+        {% if category.parent %}
+
+            <td><a href="/admin/category/{{ category.parent.id }}">{{ category.parent.title }}</a></td>
+
+        {% else %}
+
+            <td>Nėra</td>
+
+        {% endif %}
+
+        <td>{{ category.date | date() }}</td>
+        <td>
+            <a href="/admin/category/view/{{ category.id }}"><i class="material-icons">remove_red_eye</i></a>
+            <a href="/admin/category/edit/{{ category.id }}"><i class="material-icons">create</i></a>
+            <i data-toggle="modal" data-record-id="{{ category.id }}" data-target="#delete-category-modal" class="material-icons">delete</i>
+        </td>
+
+    </tr>
+
+{% endfor %}
+
+{% if categories is empty %}
+
+    <tr>
+
+        <td colspan="5">Nėra įrašų</td>
+
+    </tr>
+
+{% endif %}
+
+</tbody>

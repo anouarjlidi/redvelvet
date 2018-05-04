@@ -14,6 +14,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -33,12 +34,14 @@ class ProductType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', TextType::class, array('required' => true, "label" => "Pavadinimas"))
-            ->add('description', TextareaType::class, array('required' => true, "label" => "Aprašymas"))
-            ->add('photo', FileType::class, array('required' => true, "label" => "Nuotrauka"))
-            ->add('price', NumberType::class, array('required' => true, "label" => "Kaina"))
+            ->add('title', TextType::class, array('required' => true, "label" => "Pavadinimas", 'attr'=> array('class'=>'form-control')))
+            ->add('description', TextareaType::class, array('required' => true, "label" => "Aprašymas", 'attr'=> array('class'=>'form-control')))
+            ->add('photo', FileType::class, array('required' => true, "label" => "Nuotrauka", 'data_class' => null))
+            ->add('price', MoneyType::class, array('currency' => false, 'required' => true, "label" => "Kaina", 'attr'=> array('class'=>'form-control')))
+            ->add('units', TextType::class, array('required' => true, "label" => "Matas", 'attr'=> array('class'=>'form-control')))
             ->add('category', ChoiceType::class, array(
                 'required' => true,
+                'placeholder' => '',
                 'choices' => $this->entityManager->getRepository(Category::class)->findAll(),
                 'choice_label' => function(Category $category) {
                     return $category->getTitle();
@@ -46,9 +49,10 @@ class ProductType extends AbstractType
                 'choice_value' => function (Category $category = null) {
                     return $category ? $category->getId() : null;
                 },
-                "label" => "Category"
+                "label" => "Kategorija",
+                'attr'=> array('class'=>'form-control')
             ))
-            ->add('save', SubmitType::class, array("label" => "Išsaugoti"))
+            ->add('save', SubmitType::class, array("label" => "Išsaugoti", 'attr'=> array('class'=>'btn-sm float-right btn-primary btn')))
         ;
     }
 

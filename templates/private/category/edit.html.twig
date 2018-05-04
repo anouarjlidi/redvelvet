@@ -1,0 +1,35 @@
+{% extends "private/page-base.html.twig" %}
+
+{% block pageStylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('css/private/form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/private/details.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+
+        <h2>Redaguoti kategoriją</h2>
+
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <a href="/admin/category/add" class="btn btn-sm btn-secondary">Pridėti kategoriją</a>
+            </div>
+            <div class="btn-group mr-2">
+                <a href="/admin/categories/1" class="btn btn-sm btn-primary">Visos kategorijos</a>
+            </div>
+        </div>
+
+    </div>
+
+    {% include 'private/category/sections/form.html.twig' %}
+
+{% endblock %}
+
+{% block javascripts %}
+
+
+
+{% endblock %}

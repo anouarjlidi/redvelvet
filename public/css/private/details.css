@@ -1,0 +1,96 @@
+.details{
+    width: 900px;
+    -webkit-box-shadow: 0 0 4px #a9a9a9;
+    box-shadow: 0 0 4px #a9a9a9;
+    border-bottom: none;
+    border-bottom: 1px solid #DFDFDF;
+    position: relative;
+}
+
+.details > div.content{
+    padding: 15px;
+}
+
+.details > div.header{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 10px;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.details > div.header input{
+    height: 32.5px;
+}
+
+.details > div.footer{
+    width: 100%;
+    height: auto;
+    padding: 8.75px 12.5px;
+    background-color: #ededed;
+}
+
+.details > label{
+    display: block;
+    position: absolute;
+    top: -15px;
+    line-height: 30px;
+    left: 15px;
+    color:#a9a9a9;
+    padding: 0 10px;
+    height: 30px;
+    background-color: white;
+    font-weight: bold;
+    font-size: 0.65em;
+    text-transform: capitalize;
+}
+
+.details .row label{
+    display: block;
+    text-align: left;
+    color: #c5c5c5;
+    width: 100%;
+    font-weight: 500;
+    font-size: 0.8em;
+    margin-bottom: 2.5px;
+    text-transform: capitalize;
+}
+
+.details .row p{
+    margin: 0;
+    line-height: 32.5px;
+    color:#203F49;
+    font-size: 0.8em;
+}
+
+.map-details .content{
+    padding: 12.5px !important;
+}
+
+.details .row{
+    margin-bottom: 15px;
+}
+
+.details .row strong{
+    font-size: 0.9em;
+}
+
+.details .row:last-of-type{
+    margin-bottom: 0;
+}
+
+.details .row .description{
+    color:#a9a9a9;
+}
+
+.details .row i{
+    font-size: 18px;
+    width: 18px;
+    vertical-align: sub;
+    margin-right: 7.5px;
+    font-weight: bold;
+}
+
+.details-sp{
+    padding: 10px;
+}

@@ -20,7 +20,7 @@
                 <p>{{ product.description }}</p>
                 <div class="price">
 
-                    <label>{{ (product.price / 100) | round(0, 'floor')}}.{{ "%02d" | format((product.price % 100))}} <sup>€/{{ product.units }}.</sup></label>
+                    <label>{{ product.price }} <sup>€/{{ product.units }}.</sup></label>
                     <button class="button" onclick="openModal({{ product.id }})">Į krepšelį</button>
 
                 </div>

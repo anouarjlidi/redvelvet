@@ -1,0 +1,32 @@
+<tbody>
+
+{% for course in courses %}
+
+    <tr>
+
+        <td>{{ course.id }}</td>
+        <td>{{ course.title }}</td>
+        <td>{{ course.price }} €</td>
+        <td>{{ course.eventDate | date() }}</td>
+        <td>{{ course.date | date() }}</td>
+        <td>
+            <a href="/admin/course/view/{{ course.id }}"><i class="material-icons">remove_red_eye</i></a>
+            <a href="/admin/course/edit/{{ course.id }}"><i class="material-icons">create</i></a>
+            <i data-toggle="modal" data-record-id="{{ course.id }}" data-target="#delete-course-modal" class="material-icons">delete</i>
+        </td>
+
+    </tr>
+
+{% endfor %}
+
+{% if courses is empty %}
+
+    <tr>
+
+        <td colspan="6">Nėra įrašų</td>
+
+    </tr>
+
+{% endif %}
+
+</tbody>

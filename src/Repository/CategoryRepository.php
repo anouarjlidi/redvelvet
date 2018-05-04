@@ -8,9 +8,15 @@
 
 namespace App\Repository;
 
+use App\Entity\Category;
 use Doctrine\ORM\EntityRepository;
 
 class CategoryRepository extends EntityRepository
 {
-
+    public function add(Category $category)
+    {
+        $this->getEntityManager()->persist($category);
+        $this->getEntityManager()->flush();
+        return $category->getId();
+    }
 }

@@ -1,0 +1,59 @@
+{{ form_start(form) }}
+
+<div class="form details">
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.title) }}
+                {{ form_widget(form.title) }}
+                {{ form_errors(form.title) }}
+            </div>
+            <div class="col">
+                {{ form_label(form.price) }}
+                {{ form_widget(form.price) }}
+                {{ form_errors(form.price) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.category) }}
+                {{ form_widget(form.category) }}
+                {{ form_errors(form.category) }}
+            </div>
+            <div class="col">
+                {{ form_label(form.units) }}
+                {{ form_widget(form.units) }}
+                {{ form_errors(form.units) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.photo) }}
+                {{ form_widget(form.photo) }}
+                {{ form_errors(form.photo) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.description) }}
+                {{ form_widget(form.description) }}
+                {{ form_errors(form.description) }}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <div class="row">
+            <div class="col">
+                {{ form_widget(form.save) }}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{{ form_end(form) }}

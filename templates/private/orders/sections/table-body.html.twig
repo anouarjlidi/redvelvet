@@ -1,0 +1,31 @@
+<tbody>
+
+{% for order in orders %}
+
+    <tr>
+
+        <td>{{ order.id }}</td>
+        <td>{{ order.price }} €</td>
+        <td>{{ order.products | length }}</td>
+        <td>{{ order.status }}</td>
+        <td>{{ order.date | date() }}</td>
+        <td>
+            <a href="/admin/order/{{ order.id }}"><i class="material-icons">remove_red_eye</i></a>
+            <i data-toggle="modal" data-record-id="{{ order.id }}" data-target="#delete-order-modal" class="material-icons">delete</i>
+        </td>
+
+    </tr>
+
+{% endfor %}
+
+{% if orders is empty %}
+
+    <tr>
+
+        <td colspan="6">Nėra įrašų</td>
+
+    </tr>
+
+{% endif %}
+
+</tbody>

@@ -1,0 +1,33 @@
+<tbody>
+
+{% for product in products %}
+
+    <tr>
+
+        <td>{{ product.id }}</td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.price }} €</td>
+        <td>{{ product.units }}</td>
+        <td>{{ product.category.title }}</td>
+        <td>{{ product.date | date() }}</td>
+        <td>
+            <a href="/admin/product/view/{{ product.id }}"><i class="material-icons">remove_red_eye</i></a>
+            <a href="/admin/product/edit/{{ product.id }}"><i class="material-icons">create</i></a>
+            <i data-toggle="modal" data-record-id="{{ product.id }}" data-target="#delete-product-modal" class="material-icons">delete</i>
+        </td>
+
+    </tr>
+
+{% endfor %}
+
+{% if products is empty %}
+
+    <tr>
+
+        <td colspan="7">Nėra įrašų</td>
+
+    </tr>
+
+{% endif %}
+
+</tbody>

@@ -39,6 +39,12 @@ class Gallery
      */
     private $photos;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=false)
+     * @ORM\Version
+     */
+    private $date;
+
     public function getId()
     {
         return $this->id;
@@ -77,6 +83,16 @@ class Gallery
     public function setPhotos($photos)
     {
         $this->photos = $photos;
+    }
+
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    public function setDate($date)
+    {
+        $this->date = $date;
     }
 
 }

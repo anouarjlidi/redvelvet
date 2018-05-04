@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class FileUploader
 {
-    private $targetDir = "products/";
+    private $targetDir = "photos/";
 
     public function upload(UploadedFile $file)
     {

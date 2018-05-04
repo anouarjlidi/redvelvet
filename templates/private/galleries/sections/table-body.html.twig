@@ -1,0 +1,30 @@
+<tbody>
+
+{% for gallery in galleries %}
+
+    <tr>
+
+        <td>{{ gallery.id }}</td>
+        <td>{{ gallery.title }}</td>
+        <td>{{ gallery.photos | length }}</td>
+        <td>{{ gallery.date | date() }}</td>
+        <td>
+            <a href="/admin/gallery/{{ gallery.id }}"><i class="material-icons">remove_red_eye</i></a>
+            <i data-toggle="modal" data-record-id="{{ gallery.id }}" data-target="#delete-gallery-modal" class="material-icons">delete</i>
+        </td>
+
+    </tr>
+
+{% endfor %}
+
+{% if galleries is empty %}
+
+    <tr>
+
+        <td colspan="5">Nėra įrašų</td>
+
+    </tr>
+
+{% endif %}
+
+</tbody>

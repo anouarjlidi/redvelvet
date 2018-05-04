@@ -23,7 +23,7 @@
                     <div class="title">
 
                         <h3>{{ product.title }}</h3>
-                        <label class="price"><span>{{ (product.price / 100) | round(0, 'floor')}}.{{ "%02d" | format((product.price % 100))}}</span> <sup>€/{{ product.units }}.</sup></label>
+                        <label class="price"><span>{{ product.price }}</span> <sup>€/{{ product.units }}.</sup></label>
 
                     </div>
 
@@ -58,7 +58,7 @@
             <div class="no-data">
 
                 <p>Krepšelis tuščias</p>
-                <a class="button" href="/categories">Asortimentas</a>
+                <a class="button" href="/categories/0">Asortimentas</a>
 
             </div>
 

@@ -1,0 +1,81 @@
+<div class="details">
+
+    <div class="content">
+
+        <div class="row">
+
+            <div class="col-4">
+
+                <label>Nuotrauka</label>
+                <img src="{{ asset(course.photo) }}">
+
+            </div>
+
+            <div class="col-8">
+
+                <div class="row">
+
+                    <div class="col-6">
+                        <label>Id</label>
+                        <i class="material-icons">security</i><strong>{{ course.id }}</strong>
+                    </div>
+
+                    <div class="col-6">
+                        <label>Pavadinimas</label>
+                        <i class="material-icons">title</i><strong>{{ course.title }}</strong>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+                        <label>Renginio data</label>
+                        <i class="material-icons">label</i><strong>{{ course.eventDate | date() }}</strong>
+                    </div>
+
+                    <div class="col-6">
+                        <label>Sukūrimo data</label>
+                        <i class="material-icons">date_range</i><strong>{{ course.date | date() }}</strong>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+                        <label>Kaina</label>
+                        <i class="material-icons">attach_money</i><strong>{{ course.price }} €</strong>
+                    </div>
+
+                </div>
+
+                <div class="row description">
+
+                    <div class="col">
+                        <label>Aprašymas</label>
+                        <i class="material-icons">assignment</i><strong>{{ course.description }}</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <div class="row">
+
+            <div class="col">
+                <a class="btn btn-sm btn-primary float-right" href="/admin/course/edit/{{ course.id }}">Redaguoti</a>
+                <button class="mr-2 btn btn-sm btn-secondary float-right">Ištrinti</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,25 @@
+{% extends "private/page-base.html.twig" %}
+
+{% block pageStylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('css/private/table.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+
+        <h2>Galerijos</h2>
+
+    </div>
+
+    {% include 'private/galleries/sections/table.html.twig' %}
+
+{% endblock %}
+
+{% block javascripts %}
+
+
+
+{% endblock %}
