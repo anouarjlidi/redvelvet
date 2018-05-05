@@ -51,7 +51,7 @@ class Course
     private $date;
 
     /**
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(groups={"add"})
      * @ORM\Column(type="string")
      */
     private $photo;
@@ -61,8 +61,6 @@ class Course
      * @ORM\Column(type="datetime")
      */
     private $eventDate;
-
-
 
     public function getId()
     {

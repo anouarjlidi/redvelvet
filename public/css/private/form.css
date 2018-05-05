@@ -40,6 +40,8 @@
 .form .row ul{
     text-align: left;
     display: block;
+    width: 100%;
+    clear: both;
     margin: 0;
     padding: 0;
 }

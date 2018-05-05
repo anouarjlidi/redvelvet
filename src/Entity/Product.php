@@ -57,7 +57,7 @@ class Product
     private $description;
 
     /**
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(groups={"add"})
      * @ORM\Column(type="string")
      */
     private $photo;

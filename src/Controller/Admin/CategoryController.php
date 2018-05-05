@@ -28,7 +28,7 @@ class CategoryController extends Controller
     {
         $category = new Category();
 
-        $form = $this->createForm(CategoryType::class, $category);
+        $form = $this->createForm(CategoryType::class, $category, ['validation_groups' => array('add')]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
@@ -53,16 +53,26 @@ class CategoryController extends Controller
 
         if(!$category)
         {
-            $this->redirectToRoute('admin categories', ['page' => 1]);
+            return $this->redirectToRoute('admin categories', ['page' => 1]);
         }
 
-        $form = $this->createForm(CategoryType::class, $category);
+        $photo = $category->getPhoto();
+
+        $form = $this->createForm(CategoryType::class, $category, ['validation_groups' => array('edit')]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            $filename = $fileUploader->upload($category->getPhoto());
-            $category->setPhoto($filename);
+            if($category->getPhoto())
+            {
+                $filename = $fileUploader->upload($category->getPhoto());
+                $category->setPhoto($filename);
+            }
+            else
+            {
+                $category->setPhoto($photo);
+            }
+
             $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('admin category', ['id' => $id]);
         }
@@ -81,7 +91,7 @@ class CategoryController extends Controller
 
         if(!$category)
         {
-            $this->redirectToRoute('admin categories', ['page' => 1]);
+            return $this->redirectToRoute('admin categories', ['page' => 1]);
         }
 
         return $this->render('private/category/index.html.twig', array(

@@ -8,6 +8,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToMany;
 
@@ -17,11 +18,16 @@ use Doctrine\ORM\Mapping\OneToMany;
  */
 class Gallery
 {
+    public function __construct()
+    {
+        $this->photos = new ArrayCollection();
+    }
+
     /**
- * @ORM\Column(type="integer")
- * @ORM\Id
- * @ORM\GeneratedValue(strategy="AUTO")
- */
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
 
     /**

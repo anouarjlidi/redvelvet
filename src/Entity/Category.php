@@ -41,7 +41,7 @@ class Category
     private $title;
 
     /**
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(groups={"add"})
      * @ORM\Column(type="string")
      */
     private $photo;

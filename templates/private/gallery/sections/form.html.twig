@@ -1,0 +1,32 @@
+{{ form_start(form) }}
+
+<div class="form details">
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-6">
+                {{ form_label(form.title) }}
+                {{ form_widget(form.title) }}
+                {{ form_errors(form.title) }}
+            </div>
+            <div class="col">
+                {{ form_label(form.photo) }}
+                {{ form_widget(form.photo) }}
+                {{ form_errors(form.photo) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+
+        <div class="row">
+            <div class="col">
+                {{ form_widget(form.save) }}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{{ form_end(form) }}

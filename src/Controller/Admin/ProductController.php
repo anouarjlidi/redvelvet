@@ -27,7 +27,7 @@ class ProductController extends Controller
     {
         $product = new Product();
 
-        $form = $this->createForm(ProductType::class, $product);
+        $form = $this->createForm(ProductType::class, $product, ['validation_groups' => array('add')]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
@@ -52,16 +52,26 @@ class ProductController extends Controller
 
         if(!$product)
         {
-            $this->redirectToRoute('admin products', ['page' => 1]);
+            return $this->redirectToRoute('admin products', ['page' => 1]);
         }
 
-        $form = $this->createForm(ProductType::class, $product);
+        $photo = $product->getPhoto();
+
+        $form = $this->createForm(ProductType::class, $product, ['validation_groups' => array('edit')]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            $filename = $fileUploader->upload($product->getPhoto());
-            $product->setPhoto($filename);
+            if($product->getPhoto())
+            {
+                $filename = $fileUploader->upload($product->getPhoto());
+                $product->setPhoto($filename);
+            }
+            else
+            {
+                $product->setPhoto($photo);
+            }
+
             $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('admin product', ['id' => $id]);
         }
@@ -80,7 +90,7 @@ class ProductController extends Controller
 
         if(!$product)
         {
-            $this->redirectToRoute('admin products', ['page' => 1]);
+            return $this->redirectToRoute('admin products', ['page' => 1]);
         }
 
         return $this->render('private/product/index.html.twig', array(

@@ -36,7 +36,6 @@ class ProductType extends AbstractType
         $builder
             ->add('title', TextType::class, array('required' => true, "label" => "Pavadinimas", 'attr'=> array('class'=>'form-control')))
             ->add('description', TextareaType::class, array('required' => true, "label" => "Aprašymas", 'attr'=> array('class'=>'form-control')))
-            ->add('photo', FileType::class, array('required' => true, "label" => "Nuotrauka", 'data_class' => null))
             ->add('price', MoneyType::class, array('currency' => false, 'required' => true, "label" => "Kaina", 'attr'=> array('class'=>'form-control')))
             ->add('units', TextType::class, array('required' => true, "label" => "Matas", 'attr'=> array('class'=>'form-control')))
             ->add('category', ChoiceType::class, array(
@@ -52,8 +51,16 @@ class ProductType extends AbstractType
                 "label" => "Kategorija",
                 'attr'=> array('class'=>'form-control')
             ))
-            ->add('save', SubmitType::class, array("label" => "Išsaugoti", 'attr'=> array('class'=>'btn-sm float-right btn-primary btn')))
-        ;
+            ->add('save', SubmitType::class, array("label" => "Išsaugoti", 'attr'=> array('class'=>'btn-sm float-right btn-primary btn')));
+
+        if($options['validation_groups'][0] == 'add')
+        {
+            $builder->add('photo', FileType::class, array('required' => true, "label" => "Nuotrauka", 'data_class' => null));
+        }
+        else
+        {
+            $builder->add('photo', FileType::class, array('required' => false, "label" => "Nuotrauka", 'data_class' => null));
+        }
     }
 
     public function configureOptions(OptionsResolver $resolver)
@@ -62,7 +69,8 @@ class ProductType extends AbstractType
             'data_class' => 'App\Entity\Product',
             'attr' => array(
                 'class' => 'product'
-            )
+            ),
+            'validation_groups' => array('add'),
         ));
     }
 }

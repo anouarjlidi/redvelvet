@@ -7,7 +7,7 @@
             <div class="col-4">
 
                 <label>Nuotrauka</label>
-                <img src="{{ asset(product.photo) }}">
+                <img src="{{ asset('photos/'~product.photo) }}">
 
             </div>
 
@@ -42,6 +42,11 @@
                 </div>
 
                 <div class="row">
+
+                    <div class="col-6">
+                        <label>Matas</label>
+                        <i class="material-icons">date_range</i><strong>{{ product.units }}</strong>
+                    </div>
 
                     <div class="col-6">
                         <label>Sukūrimo data</label>

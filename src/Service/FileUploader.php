@@ -12,19 +12,24 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class FileUploader
 {
-    private $targetDir = "photos/";
+    private $targetDirectory;
+
+    public function __construct($targetDirectory)
+    {
+        $this->targetDirectory = $targetDirectory;
+    }
 
     public function upload(UploadedFile $file)
     {
-        $fileName = $this->getTargetDir().md5(uniqid()).'.'.$file->guessExtension();
+        $fileName = md5(uniqid()).'.'.$file->guessExtension();
 
-        $file->move($this->getTargetDir(), $fileName);
+        $file->move($this->getTargetDirectory(), $fileName);
 
         return $fileName;
     }
 
-    public function getTargetDir()
+    public function getTargetDirectory()
     {
-        return $this->targetDir;
+        return $this->targetDirectory;
     }
 }

@@ -1,0 +1,44 @@
+<div class="details">
+
+    <div class="content">
+
+        <div class="row">
+
+            <div class="col-4">
+
+                <label>Nuotrauka</label>
+                <img src="{{ asset(gallery.photo) }}">
+
+            </div>
+
+            <div class="col-8">
+
+                <div class="row">
+
+                    <div class="col-6">
+                        <label>Pavadinimas</label>
+                        <i class="material-icons">title</i><strong>{{ gallery.title }}</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <div class="row">
+
+            <div class="col">
+                <a class="btn btn-sm btn-primary float-right" href="/admin/gallery/edit/{{ gallery.id }}">Redaguoti</a>
+                <button class="mr-2 btn btn-sm btn-secondary float-right">Ištrinti</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

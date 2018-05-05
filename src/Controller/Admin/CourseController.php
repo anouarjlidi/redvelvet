@@ -30,7 +30,7 @@ class CourseController extends Controller
     {
         $course = new Course();
 
-        $form = $this->createForm(CourseType::class, $course);
+        $form = $this->createForm(CourseType::class, $course, ['validation_groups' => array('add')]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
@@ -55,16 +55,27 @@ class CourseController extends Controller
 
         if(!$course)
         {
-            $this->redirectToRoute('admin courses', ['page' => 1]);
+            return $this->redirectToRoute('admin courses', ['page' => 1]);
         }
 
-        $form = $this->createForm(CourseType::class, $course);
+        $photo = $course->getPhoto();
+
+        $form = $this->createForm(CourseType::class, $course, ['validation_groups' => array('edit')]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            $filename = $fileUploader->upload($course->getPhoto());
-            $course->setPhoto($filename);
+            if($course->getPhoto())
+            {
+                $filename = $fileUploader->upload($course->getPhoto());
+                $course->setPhoto($filename);
+            }
+            else
+            {
+                $course->setPhoto($photo);
+            }
+
+
             $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('admin couse', ['id' => $id]);
         }
@@ -83,7 +94,7 @@ class CourseController extends Controller
 
         if(!$course)
         {
-            $this->redirectToRoute('admin courses', ['page' => 1]);
+            return $this->redirectToRoute('admin courses', ['page' => 1]);
         }
 
         return $this->render('private/course/index.html.twig', array(

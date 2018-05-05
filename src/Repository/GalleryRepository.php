@@ -9,12 +9,18 @@
 
 namespace App\Repository;
 
+use App\Entity\Gallery;
 use App\Entity\Product;
 use Doctrine\ORM\EntityRepository;
 
 class GalleryRepository extends EntityRepository
 {
-
+    public function add(Gallery $gallery)
+    {
+        $this->getEntityManager()->persist($gallery);
+        $this->getEntityManager()->flush();
+        return $gallery->getId();
+    }
 
 
 }
