@@ -18,7 +18,7 @@
 
                         <a href="/categories/{{ category.id }}">
 
-                            <img alt="{{ category.title }}" src="{{ asset(category.photo) }}">
+                            <img alt="{{ category.title }}" src="{{ asset('photos/'~category.photo) }}">
 
                         </a>
 
@@ -26,7 +26,7 @@
 
                         <a href="/products/{{ category.id }}/1">
 
-                            <img alt="{{ category.title }}" src="{{ asset(category.photo) }}">
+                            <img alt="{{ category.title }}" src="{{ asset('photos/'~category.photo) }}">
 
                         </a>
 

@@ -6,7 +6,7 @@ var product;
 $(document).ready(function()
 {
 
-    quantityInput.keyup(function () {
+    quantityInput.keydown(function () {
 
         if($(this).val() <= 0)
         {
@@ -71,8 +71,8 @@ function getProduct(productId) {
             modal.attr('productId', productId);
             product = data;
             $('.product-name').html(data['title']);
-            $('.product-price').html("<span>"+(data['price']/100).toFixed(2)+"</span> €/"+data['units']);
-            $('#sum').html((data['price']/100).toFixed(2) + ' €');
+            $('.product-price').html("<span>"+data['price']+"</span> €/"+data['units']);
+            $('#sum').html(data['price'] + ' €');
             $('.modal .content').css('visibility', 'visible');
             $('.loader').addClass('hide-loader');
             $('.modal button').attr('disabled', false);
