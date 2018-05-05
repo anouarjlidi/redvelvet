@@ -41,6 +41,7 @@ class ComposerStaticInit976e3d609de4876ebfa600cad0b02fdc
             'Symfony\\Component\\Form\\' => 23,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Filesystem\\' => 29,
+            'Symfony\\Component\\ExpressionLanguage\\' => 37,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Dotenv\\' => 25,
             'Symfony\\Component\\DependencyInjection\\' => 38,
@@ -170,6 +171,10 @@ class ComposerStaticInit976e3d609de4876ebfa600cad0b02fdc
         'Symfony\\Component\\Filesystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/filesystem',
+        ),
+        'Symfony\\Component\\ExpressionLanguage\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/expression-language',
         ),
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
