@@ -9,14 +9,11 @@
 namespace App\Controller;
 
 use App\Entity\Category;
-use App\Entity\Product;
-use App\Repository\ProductRepository;
 use App\Service\Cart;
 use App\Type\ShippingType;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class CartController extends Controller
 {

@@ -9,20 +9,12 @@
 namespace App\Controller\Admin\Api;
 
 use App\Entity\Gallery;
-use App\Entity\Product;
-use App\Repository\CategoryRepository;
-use App\Service\Cart;
 use App\Service\FileService;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use App\Service\ResponseGenerator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
-
 
 class Api_GalleryController extends Controller
 {

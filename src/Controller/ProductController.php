@@ -8,15 +8,11 @@
 
 namespace App\Controller;
 
-use App\Entity\Category;
 use App\Entity\Product;
-use App\Form\ProductType;
-use App\Service\FileService;
 use App\Service\PathFinder;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ProductController extends Controller
 {

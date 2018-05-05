@@ -8,18 +8,12 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Category;
 use App\Entity\Gallery;
-use App\Entity\Photo;
-use App\Entity\Product;
 use App\Form\GalleryType;
-use App\Form\ProductType;
 use App\Service\FileService;
-use App\Service\PathFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class GalleryController extends Controller
 {

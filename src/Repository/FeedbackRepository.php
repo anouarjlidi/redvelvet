@@ -8,11 +8,8 @@
 
 namespace App\Repository;
 
-use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\EntityRepository;
-use App\Entity\Feedback;
-use Doctrine\ORM\Mapping;
 use App\Service\JsonConverter;
+use Doctrine\ORM\EntityRepository;
 
 class FeedbackRepository extends EntityRepository
 {

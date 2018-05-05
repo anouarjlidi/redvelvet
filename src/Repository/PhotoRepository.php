@@ -9,7 +9,6 @@
 namespace App\Repository;
 
 use App\Entity\Photo;
-use App\Entity\Product;
 use Doctrine\ORM\EntityRepository;
 
 class PhotoRepository extends EntityRepository
