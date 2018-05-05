@@ -19,7 +19,7 @@ services:
         resource: '../src/*'
         exclude: '../src/{Entity,Migrations,Tests,Kernel.php}'
 
-    App\Service\FileUploader:
+    App\Service\FileService:
             arguments:
                 $targetDirectory: '%photos_directory%'
 

@@ -24,8 +24,14 @@
 
 {% endblock %}
 
+{% block modals %}
+
+    {% include 'private/modals/delete-confirmation-modal.html.twig' %}
+
+{% endblock %}
+
 {% block javascripts %}
 
-
+    <script type="application/javascript" src="{{ asset("js/private/delete-confirmation.js") }}"></script>
 
 {% endblock %}

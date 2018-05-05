@@ -11,7 +11,7 @@ namespace App\Controller\Admin;
 use App\Entity\Category;
 use App\Entity\Product;
 use App\Form\ProductType;
-use App\Service\FileUploader;
+use App\Service\FileService;
 use App\Service\PathFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +23,7 @@ class ProductController extends Controller
     /**
      * @Route("/admin/product/add", name="admin add product")
      */
-    public function addAction(Request $request, FileUploader $fileUploader)
+    public function addAction(Request $request, FileService $fileService)
     {
         $product = new Product();
 
@@ -32,7 +32,7 @@ class ProductController extends Controller
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            $filename = $fileUploader->upload($product->getPhoto());
+            $filename = $fileService->upload($product->getPhoto());
             $product->setPhoto($filename);
             $this->getDoctrine()->getRepository(Product::class)->add($product);
             return $this->redirectToRoute('admin products', ['page' => 1]);
@@ -46,7 +46,7 @@ class ProductController extends Controller
     /**
      * @Route("/admin/product/edit/{id}", name="admin edit product")
      */
-    public function editAction(Request $request, FileUploader $fileUploader, $id)
+    public function editAction(Request $request, FileService $fileService, $id)
     {
         $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
 
@@ -64,7 +64,8 @@ class ProductController extends Controller
         {
             if($product->getPhoto())
             {
-                $filename = $fileUploader->upload($product->getPhoto());
+                $fileService->delete($photo);
+                $filename = $fileService->upload($product->getPhoto());
                 $product->setPhoto($filename);
             }
             else

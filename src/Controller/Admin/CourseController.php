@@ -14,7 +14,7 @@ use App\Entity\Product;
 use App\Form\CategoryType;
 use App\Form\CourseType;
 use App\Form\ProductType;
-use App\Service\FileUploader;
+use App\Service\FileService;
 use App\Service\PathFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,7 +26,7 @@ class CourseController extends Controller
     /**
      * @Route("/admin/course/add", name="admin add course")
      */
-    public function addAction(Request $request, FileUploader $fileUploader)
+    public function addAction(Request $request, FileService $fileService)
     {
         $course = new Course();
 
@@ -35,7 +35,7 @@ class CourseController extends Controller
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            $filename = $fileUploader->upload($course->getPhoto());
+            $filename = $fileService->upload($course->getPhoto());
             $course->setPhoto($filename);
             $this->getDoctrine()->getRepository(Course::class)->add($course);
             return $this->redirectToRoute('admin courses', ['page' => 1]);
@@ -49,7 +49,7 @@ class CourseController extends Controller
     /**
      * @Route("/admin/course/edit/{id}", name="admin edit course")
      */
-    public function editAction(Request $request, FileUploader $fileUploader, $id)
+    public function editAction(Request $request, FileService $fileService, $id)
     {
         $course = $this->getDoctrine()->getRepository(Course::class)->find($id);
 
@@ -67,7 +67,8 @@ class CourseController extends Controller
         {
             if($course->getPhoto())
             {
-                $filename = $fileUploader->upload($course->getPhoto());
+                $fileService->delete($photo);
+                $filename = $fileService->upload($course->getPhoto());
                 $course->setPhoto($filename);
             }
             else
@@ -77,7 +78,7 @@ class CourseController extends Controller
 
 
             $this->getDoctrine()->getManager()->flush();
-            return $this->redirectToRoute('admin couse', ['id' => $id]);
+            return $this->redirectToRoute('admin course', ['id' => $id]);
         }
 
         return $this->render('private/course/edit.html.twig', array(

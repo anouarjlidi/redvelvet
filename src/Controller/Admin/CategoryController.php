@@ -12,7 +12,7 @@ use App\Entity\Category;
 use App\Entity\Product;
 use App\Form\CategoryType;
 use App\Form\ProductType;
-use App\Service\FileUploader;
+use App\Service\FileService;
 use App\Service\PathFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,7 +24,7 @@ class CategoryController extends Controller
     /**
      * @Route("/admin/category/add", name="add category")
      */
-    public function addAction(Request $request, FileUploader $fileUploader)
+    public function addAction(Request $request, FileService $fileService)
     {
         $category = new Category();
 
@@ -33,7 +33,7 @@ class CategoryController extends Controller
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            $filename = $fileUploader->upload($category->getPhoto());
+            $filename = $fileService->upload($category->getPhoto());
             $category->setPhoto($filename);
             $this->getDoctrine()->getRepository(Category::class)->add($category);
             return $this->redirectToRoute('admin categories', ['page' => 1]);
@@ -47,7 +47,7 @@ class CategoryController extends Controller
     /**
      * @Route("/admin/category/edit/{id}", name="admin edit category")
      */
-    public function editAction(Request $request, FileUploader $fileUploader, $id)
+    public function editAction(Request $request, FileService $fileService, $id)
     {
         $category = $this->getDoctrine()->getRepository(Category::class)->find($id);
 
@@ -65,7 +65,8 @@ class CategoryController extends Controller
         {
             if($category->getPhoto())
             {
-                $filename = $fileUploader->upload($category->getPhoto());
+                $fileService->delete($photo);
+                $filename = $fileService->upload($category->getPhoto());
                 $category->setPhoto($filename);
             }
             else

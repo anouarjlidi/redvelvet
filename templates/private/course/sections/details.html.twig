@@ -7,7 +7,7 @@
             <div class="col-4">
 
                 <label>Nuotrauka</label>
-                <img src="{{ asset(course.photo) }}">
+                <img src="{{ asset('photos/'~course.photo) }}">
 
             </div>
 
@@ -71,7 +71,7 @@
 
             <div class="col">
                 <a class="btn btn-sm btn-primary float-right" href="/admin/course/edit/{{ course.id }}">Redaguoti</a>
-                <button class="mr-2 btn btn-sm btn-secondary float-right">Ištrinti</button>
+                <button data-toggle="modal" data-record-id="{{ course.id }}" data-entity-type="course" data-target="#delete-confirmation-modal" class="mr-2 btn btn-sm btn-secondary float-right">Ištrinti</button>
             </div>
 
         </div>

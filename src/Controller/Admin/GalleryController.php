@@ -14,7 +14,7 @@ use App\Entity\Photo;
 use App\Entity\Product;
 use App\Form\GalleryType;
 use App\Form\ProductType;
-use App\Service\FileUploader;
+use App\Service\FileService;
 use App\Service\PathFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,7 +26,7 @@ class GalleryController extends Controller
     /**
      * @Route("/admin/gallery/add", name="admin add gallery")
      */
-    public function addAction(Request $request, FileUploader $fileUploader)
+    public function addAction(Request $request, FileService $fileService)
     {
         $gallery = new Gallery();
 
@@ -35,7 +35,7 @@ class GalleryController extends Controller
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            $filename = $fileUploader->upload($gallery->getPhoto());
+            $filename = $fileService->upload($gallery->getPhoto());
             $gallery->setPhoto($filename);
             $this->getDoctrine()->getRepository(Gallery::class)->add($gallery);
             return $this->redirectToRoute('admin galleries', ['page' => 1]);
@@ -49,7 +49,7 @@ class GalleryController extends Controller
     /**
      * @Route("/admin/gallery/edit/{id}", name="admin edit gallery")
      */
-    public function editAction(Request $request, FileUploader $fileUploader, $id)
+    public function editAction(Request $request, FileService $fileService, $id)
     {
         $gallery = $this->getDoctrine()->getRepository(Gallery::class)->find($id);
         $photo = $gallery->getPhoto();
@@ -66,7 +66,8 @@ class GalleryController extends Controller
         {
             if($gallery->getPhoto())
             {
-                $filename = $fileUploader->upload($gallery->getPhoto());
+                $fileService->delete($photo);
+                $filename = $fileService->upload($gallery->getPhoto());
                 $gallery->setPhoto($filename);
             }
             else

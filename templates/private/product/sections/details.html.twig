@@ -76,7 +76,7 @@
 
             <div class="col">
                 <a class="btn btn-sm btn-primary float-right" href="/admin/product/edit/{{ product.id }}">Redaguoti</a>
-                <button class="mr-2 btn btn-sm btn-secondary float-right">Ištrinti</button>
+                <button data-toggle="modal" data-record-id="{{ product.id }}" data-entity-type="product" data-target="#delete-confirmation-modal" class="mr-2 btn btn-sm btn-secondary float-right">Ištrinti</button>
             </div>
 
         </div>

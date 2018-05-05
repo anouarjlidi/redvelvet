@@ -7,7 +7,7 @@
             <div class="col-4">
 
                 <label>Nuotrauka</label>
-                <img src="{{ asset(gallery.photo) }}">
+                <img src="{{ asset('photos/'~gallery.photo) }}">
 
             </div>
 
@@ -34,7 +34,7 @@
 
             <div class="col">
                 <a class="btn btn-sm btn-primary float-right" href="/admin/gallery/edit/{{ gallery.id }}">Redaguoti</a>
-                <button class="mr-2 btn btn-sm btn-secondary float-right">Ištrinti</button>
+                <button data-toggle="modal" data-record-id="{{ gallery.id }}" data-entity-type="gallery" data-target="#delete-confirmation-modal" class="mr-2 btn btn-sm btn-secondary float-right">Ištrinti</button>
             </div>
 
         </div>

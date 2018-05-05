@@ -11,7 +11,7 @@
         <td>{{ order.date | date() }}</td>
         <td>
             <a href="/admin/order/{{ order.id }}"><i class="material-icons">remove_red_eye</i></a>
-            <i data-toggle="modal" data-record-id="{{ order.id }}" data-target="#delete-order-modal" class="material-icons">delete</i>
+            <i data-toggle="modal" data-record-id="{{ order.id }}" data-entity-type="order" data-target="#delete-confirmation-modal" class="material-icons">delete</i>
         </td>
 
     </tr>

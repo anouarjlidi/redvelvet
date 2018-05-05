@@ -12,7 +12,7 @@
         <td>
             <a href="/admin/course/view/{{ course.id }}"><i class="material-icons">remove_red_eye</i></a>
             <a href="/admin/course/edit/{{ course.id }}"><i class="material-icons">create</i></a>
-            <i data-toggle="modal" data-record-id="{{ course.id }}" data-target="#delete-course-modal" class="material-icons">delete</i>
+            <i data-toggle="modal" data-record-id="{{ course.id }}" data-entity-type="course" data-target="#delete-confirmation-modal" class="material-icons">delete</i>
         </td>
 
     </tr>
