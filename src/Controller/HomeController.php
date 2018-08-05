@@ -24,7 +24,7 @@ class HomeController extends Controller{
      */
     public function indexAction()
     {
-        $categories = $this->getDoctrine()->getRepository(Category::class)->findBy([], [], 4, 0);
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null], [], 4, 0);
         $courses = $this->getDoctrine()->getRepository(Course::class)->findBy([], ['date' => 'desc'], 2, 0);
         $feedbacks = $this->getDoctrine()->getRepository(Feedback::class)->findBy([], [], 3, 0);
 

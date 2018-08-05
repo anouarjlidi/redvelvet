@@ -36,14 +36,14 @@ footer p:first-of-type{
     text-align: justify;
     color: white;
     margin-bottom: 50px;
-    font-family: 'Alegreya';
+    font-family: 'OpenSans';
 }
 
 footer p:last-of-type{
     margin: 0;
     color: white;
     line-height: 1.6em;
-    font-family: 'Alegreya';
+    font-family: 'OpenSans';
     text-align: center;
 }
 

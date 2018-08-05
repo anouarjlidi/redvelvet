@@ -20,7 +20,7 @@
     margin-bottom: 5px;
     color:#a9a9a9;
     text-transform: uppercase;
-    font-family: 'Alegreya';
+    font-family: 'OpenSans';
     font-size: 0.8em;
 }
 
@@ -42,7 +42,7 @@
     color:white;
     text-decoration: none;
     line-height: 30px;
-    font-family: 'Alegreya';
+    font-family: 'OpenSans';
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;

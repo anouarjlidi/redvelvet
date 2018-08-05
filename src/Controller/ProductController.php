@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Product;
 use App\Service\PathFinder;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -35,6 +36,7 @@ class ProductController extends Controller
 
         return $this->render('public/product/index.html.twig', array(
             'product' => $product,
+            'navCategories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null]),
             'path' => $path
         ));
     }

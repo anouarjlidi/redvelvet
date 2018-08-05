@@ -2,7 +2,25 @@
 
     <h2 class="animated-element">Atsiliepimai</h2>
 
-    {% for feedback in feedbacks %}
+    <div class="feedback animated-element">
+
+        <span>
+
+            <img alt="left quates" src="{{ asset('img/quates.svg') }}">
+
+        </span>
+
+        <p>
+            Tobulo skonio a la Napoleon! Šviežios avietės priduoda nepakartojamą skonį  :) Ačiū!
+        </p>
+
+        <label>
+
+            Rasa Širmulienė
+
+        </label>
+
+    </div>
 
     <div class="feedback animated-element">
 
@@ -13,18 +31,36 @@
         </span>
 
         <p>
-            {{ feedback.comment }}
+            Desertų GURU! Neįmanoma persivalgyti Miglės meno kūrinių.
         </p>
 
         <label>
 
-            {{ feedback.fullName }}
+            Aurika Račinskienė
 
         </label>
 
     </div>
 
-    {% endfor %}
+    <div class="feedback animated-element">
+
+        <span>
+
+            <img alt="left quates" src="{{ asset('img/quates.svg') }}">
+
+        </span>
+
+        <p>
+            Visiems rekomenduoju, net ir nemokančiams gaminti! Atrasite save naujuose vaidmenyse.
+        </p>
+
+        <label>
+
+            Gintarė Arlauskienė
+
+        </label>
+
+    </div>
 
     <div class="cake-logo">
 

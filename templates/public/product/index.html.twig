@@ -5,14 +5,12 @@
     <link rel="stylesheet" href="{{ asset('css/public/page-base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/public/product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/public/deep-navigation.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/public/modal.css') }}">
 
 {% endblock %}
 
 {% block content %}
 
     {% include 'public/product/sections/product.html.twig' %}
-    {% include 'public/modals/add-to-cart.html.twig' %}
     <div class="modal-background"></div>
 
 {% endblock %}

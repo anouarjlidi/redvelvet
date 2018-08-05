@@ -7,6 +7,7 @@ div#description{
     margin-left: 50px;
     height: auto;
     float: left;
+    text-align: center;
     padding: 10px 25px;
 }
 
@@ -30,7 +31,7 @@ div#description .price{
     border-bottom: 1px solid #606060;
 }
 
-div#description .price label{
+div#description .price OpenSans{
     display: inline-block;
     height: 40px;
     padding-bottom: 20px;
@@ -62,7 +63,7 @@ div#description .quantity{
     text-align: center;
 }
 
-div#description .quantity label{
+div#description .quantity OpenSans{
     font-weight: bold;
     line-height: 30px;
     color: #606060;
@@ -70,11 +71,11 @@ div#description .quantity label{
     font-size: 1.1em;
 }
 
-div#description .quantity label:first-of-type{
+div#description .quantity OpenSans:first-of-type{
     float: left;
 }
 
-div#description .quantity label:last-of-type{
+div#description .quantity OpenSans:last-of-type{
     float: right;
 }
 
@@ -95,7 +96,7 @@ div#description .sum{
     text-align: center;
 }
 
-div#description .sum label{
+div#description .sum OpenSans{
     float: right;
     font-family: sail;
     line-height: 35px;

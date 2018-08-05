@@ -32,13 +32,12 @@ section#news > div.new{
 
 section#news > div > div > h3{
     width: 100%;
-    height: 50px;
     font-size: 1.8em;
     color:#ff6d84;
     margin: 0;
     margin-bottom: 5px;
     margin-top: 20px;
-    line-height: 50px;
+    line-height: 35px;
     font-family: sail;
 }
 

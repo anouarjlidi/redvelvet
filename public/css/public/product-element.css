@@ -93,7 +93,7 @@ div.product-element div.description button:hover{
     font-weight: bold;
 }
 
-div.product-element div.description label{
+div.product-element div.description OpenSans{
     float: left;
     width: 100px;
     height: 35px;
@@ -106,6 +106,6 @@ div.product-element div.description label{
     vertical-align: top;
 }
 
-div.product-element label sup{
+div.product-element OpenSans sup{
     font-size: 0.6em;
 }

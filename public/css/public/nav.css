@@ -31,7 +31,7 @@ nav.desktop-nav > div.inner-content > div.menu-item{
     line-height: 30px;
     font-size: 1em;
     white-space: nowrap;
-    font-family: 'Alegreya';
+    font-family: 'OpenSans';
     color:#80796f;
 }
 
@@ -80,7 +80,7 @@ nav.desktop-nav > div.inner-content > div.menu-item > a{
     margin: 0;
     font-weight: 500;
     font-size: 1em;
-    font-family: 'Alegreya';
+    font-family: 'OpenSans';
     color:#80796f;
 }
 
@@ -150,7 +150,7 @@ nav.mobile-nav .mobile-menu-item a{
     margin: 0;
     font-weight: 500;
     font-size: 1em;
-    font-family: 'Alegreya';
+    font-family: 'OpenSans';
     color:#80796f;
 }
 
