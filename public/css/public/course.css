@@ -3,7 +3,7 @@
     height: 30px;
     line-height: 30px;
     text-align: right;
-    font-family: 'OpenSans';
+    font-family: 'Roboto';
     color:#606060;
     font-weight: bold;
     font-size: 1.2em;
@@ -36,9 +36,12 @@
 
 .content .price label{
     display: inline-block;
+    width: 100px;
+    height: 40px;
     padding-bottom: 20px;
+    line-height: 40px;
     color: #ff6d84;
-    font-family: 'OpenSans';
+    font-family: 'Roboto';
     font-size: 1.7em;
     font-weight: bold;
     vertical-align: top;
@@ -70,7 +73,7 @@
     font-size: 1em;
     line-height: 1.1em;
     color: #606060;
-    font-family: 'OpenSans';
+    font-family: 'Roboto';
 }
 
 .content .description a{

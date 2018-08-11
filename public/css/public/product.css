@@ -31,7 +31,7 @@ div#description .price{
     border-bottom: 1px solid #606060;
 }
 
-div#description .price OpenSans{
+div#description .price label{
     display: inline-block;
     height: 40px;
     padding-bottom: 20px;
@@ -63,7 +63,7 @@ div#description .quantity{
     text-align: center;
 }
 
-div#description .quantity OpenSans{
+div#description .quantity label{
     font-weight: bold;
     line-height: 30px;
     color: #606060;
@@ -71,11 +71,11 @@ div#description .quantity OpenSans{
     font-size: 1.1em;
 }
 
-div#description .quantity OpenSans:first-of-type{
+div#description .quantity label:first-of-type{
     float: left;
 }
 
-div#description .quantity OpenSans:last-of-type{
+div#description .quantity label:last-of-type{
     float: right;
 }
 
@@ -96,7 +96,7 @@ div#description .sum{
     text-align: center;
 }
 
-div#description .sum OpenSans{
+div#description .sum label{
     float: right;
     font-family: sail;
     line-height: 35px;

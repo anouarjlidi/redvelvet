@@ -63,7 +63,7 @@ div.item div.description p{
     padding: 5px;
     padding-bottom: 0;
     text-align: center;
-    font-family: 'OpenSans';
+    font-family: 'Roboto';
     line-height: 1.3em;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -95,7 +95,7 @@ div.item div.description .price .button{
     border-radius: 5px;
     font-size: 0.9em;
     line-height: 32px;
-    font-family: 'OpenSans';
+    font-family: 'Roboto';
 }
 
 div.item div.description .price .button:hover{
@@ -110,7 +110,7 @@ div.item div.description .price label{
     padding-left: 5px;
     display: inline-block;
     color:#ff6d84;
-    font-family: 'OpenSans';
+    font-family: 'Roboto';
     text-align: left;
     font-size: 1.8em;
     font-weight: bold;

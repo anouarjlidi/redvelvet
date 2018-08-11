@@ -28,12 +28,6 @@ class Photo
      */
     private $src;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Gallery", inversedBy="photos")
-     * @ORM\JoinColumn(name="gallery_id", referencedColumnName="id")
-     */
-    private $gallery;
-
     public function getId()
     {
         return $this->id;
@@ -52,15 +46,5 @@ class Photo
     public function setSrc($src)
     {
         $this->src = $src;
-    }
-
-    public function getGallery()
-    {
-        return $this->gallery;
-    }
-
-    public function setGallery($gallery)
-    {
-        $this->gallery = $gallery;
     }
 }

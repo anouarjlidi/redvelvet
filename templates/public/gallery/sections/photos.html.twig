@@ -1,4 +1,4 @@
-{% for photo in gallery.photos %}
+{% for photo in photos %}
 
     <div onclick="openModal(this)" class="gallery animated-element">
 
@@ -12,20 +12,11 @@
 
 {% endfor %}
 
-{% if gallery.photos | length == 0 %}
+{% if photos | length == 0 %}
 
     <div class="no-data">
 
-        <p>Atsiprašome, šiuo metu nuotraukų šioje galerijoje nėra</p>
-        <a href="/galleries/1" class="button">Grįžti</a>
-
-    </div>
-
-{% else %}
-
-    <div class="button-row animated-element">
-
-        <a href="/galleries/1">Grįžti</a>
+        <p>Atsiprašome, šiuo metu nuotraukų galerijoje nėra</p>
 
     </div>
 
