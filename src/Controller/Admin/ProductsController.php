@@ -21,7 +21,7 @@ class ProductsController extends Controller
     public function __construct()
     {
         $this->order = ['date' => 'desc'];
-        $this->limit = 10;
+        $this->limit = 20;
     }
 
     /**
@@ -34,13 +34,15 @@ class ProductsController extends Controller
         $queryString = null;
 
         $products = $this->getDoctrine()->getRepository(Product::class)->findBy($criteria, $this->order, $this->limit, ($page-1)*$this->limit);
-        $pagesCount = $this->getDoctrine()->getRepository(Product::class)->count($criteria, $this->order, $this->limit, ($page-1)*$this->limit) / $this->limit;
+        $total = $this->getDoctrine()->getRepository(Product::class)->count($criteria, $this->order, $this->limit, ($page-1)*$this->limit);
+        $pagesCount =  ceil($total/ $this->limit);
 
         return $this->render('private/products/index.html.twig', [
             'products' => $products,
             'pagesCount' => $pagesCount,
             'queryString' => $queryString,
-            'page' => $page
+            'page' => $page,
+            'total' => $total
         ]);
     }
 }

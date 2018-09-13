@@ -2,6 +2,7 @@ table{
     box-shadow: none;
     font-size: 13px;
     margin: 0 !important;
+    margin-bottom: 25px !important;
 }
 
 thead{

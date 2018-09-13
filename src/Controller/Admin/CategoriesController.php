@@ -21,7 +21,7 @@ class CategoriesController extends Controller
     public function __construct()
     {
         $this->order = ['date' => 'desc'];
-        $this->limit = 10;
+        $this->limit = 20;
     }
 
     /**
@@ -34,13 +34,15 @@ class CategoriesController extends Controller
         $queryString = null;
 
         $categories = $this->getDoctrine()->getRepository(Category::class)->findBy($criteria, $this->order, $this->limit, ($page-1)*$this->limit);
-        $pagesCount = $this->getDoctrine()->getRepository(Category::class)->count($criteria, $this->order, $this->limit, ($page-1)*$this->limit) / $this->limit;
+        $total = $this->getDoctrine()->getRepository(Category::class)->count($criteria, $this->order, $this->limit, ($page-1)*$this->limit);
+        $pagesCount =  ceil($total/ $this->limit);
 
         return $this->render('private/categories/index.html.twig', [
             'categories' => $categories,
             'pagesCount' => $pagesCount,
             'queryString' => $queryString,
-            'page' => $page
+            'page' => $page,
+            'total' => $total
         ]);
     }
 }
